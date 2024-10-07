@@ -46,10 +46,37 @@ weight = float(input("enter your weight in kilogram "))
 BMI = weight/height**2
 print("%.1f"% BMI) #round of to 1 place 
 
-#exercise 2.4 
+#exercise 2.4 Write a short program that inputs an integer and prints either “It is True that your number is non-zero” or “It is False that your number is non-zero”, whichever is correct.
 number = int(input("enter a number: "))
 if number == 0 :
     print("it is False that your number is non-zero")
 else:
     print("it is True that your number is non-zero")
     
+#exercise 2.5
+while 1 > 2:
+    print("Spam")
+    print("Spam and eggs")
+print("Lobster thermidor")
+#1 < 2 : itll produce infinite loop which itll keepp looping since 1 is less than 2
+#1 > 2 : itll output lobster thermidor since 1 is not more than 2, so itll execute the loop
+
+#homework
+#(i) 
+print(type(3.1415))
+#(ii) x > = y
+#(iii) 
+print((3 < 2) or (10 == 5)) #false
+#(iv)
+total = 0
+i = 10
+while i > 5:
+    total = total + i**2
+    print(i, total)
+    i = i - 2
+print("We finished with i =", i)
+
+#3
+num1 = int(input("enter a number: "))
+num2 = int(input("enter a sec number: "))
+formula = 
