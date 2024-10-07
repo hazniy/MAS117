@@ -1,0 +1,66 @@
+\documentclass[11pt, a4paper]{amsart}
+\begin{document}
+
+Let $ f(x) = \frac{e^x}{1-x} $. 
+Here it is bigger on a new line:
+\[
+	f(x) = \frac{e^x}{1-x}. Then
+\]
+Here is the derivative: 
+\[
+	f'(x) = {(1-x)^2e^x}{e^x(1-x)6^-1}
+\]
+Here is an integral: 
+\[
+	\int_0^\pi \cos(x) \,dx = [\sin(x)]_0^\pi
+\]
+\[
+	= \sin(x) + c
+\]
+
+\end{document}
+
+
+\documentclass[11pt, a4paper]{amsart}
+\title{MAS116: Presentation Homework 1}
+\author{Nur Farhazni Najwa Binti Farhan}
+\begin{document}
+
+\maketitle
+
+\section{Question}
+Differentiate $f(x) = e^x \cos x $, then find the derivative at \( x = \frac{\pi}{4} \).
+
+\section{Solution}
+Firstly, we need to apply the product rule:
+\[
+\frac{d}{dx}[uv] = u'v + uv'
+\]
+
+From the question and the product rule above, we need to differentiate \( u = e^x \) and \( v = \cos x \) first. We will get the derivative like this: 
+\[
+u' =  e^x
+\]
+\[
+v' = -\sin x.
+\]
+
+After that, we need to apply the product rule which we will get like this: 
+\begin{align*}
+	f'(x) 
+	&= e^x \cos x + e^x (-\sin x) \\
+	&= e^x (\cos x - \sin x).
+\end{align*}
+
+Lastly, we can calculate the expression that we get at \( x = \frac{\pi}{4} \).  We know that \( \cos \frac{\pi}{4} = \sin \frac{\pi}{4} = \frac{1}{\sqrt{2}} \). Substituting this into the derivative:
+
+\begin{align*}
+	f'( \frac{\pi}{4}) 
+	&= e^{\frac{\pi}{4}} ( \frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}})\\ 
+	&= e^{\frac{\pi}{4}} \cdot 0 \\
+	&= 0.
+\end{align*}
+
+The final answer at \( x = \frac{\pi}{4} \) is 0.
+
+\end{document}
