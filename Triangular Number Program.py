@@ -13,7 +13,7 @@ print("x = ", x, "and y = ", y)
 
 #4 triangular number program (recursion)
 n = int(input("enter a number: "))
-triangular = 0
+reciprocal = 0
 i = 1
 
 if n == 0: 
@@ -21,7 +21,7 @@ if n == 0:
 else: 
     while i <= n: 
         formula = 1/(i**2)
-        triangular = triangular + formula
+        reciprocal = reciprocal + formula
         i = i + 1
-    print(triangular) 
-   
+    print(reciprocal) 
+
