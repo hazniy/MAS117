@@ -12,3 +12,9 @@ while b < 1000:
     a, b = b, a + b
 
 #1.618 is a golden ratio
+
+#teachers code 
+x,y = 1,1 #initial values for consecutive fib numbers 
+while y < 1000: #stopping condition 
+    print(y)
+    x,y = y, x + y #take one more step 
