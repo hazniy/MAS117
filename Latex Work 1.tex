@@ -54,7 +54,7 @@ After that, we need to apply the product rule which we will get like this:
 	&= e^x (\cos x - \sin x).
 \end{align*}
 
-Lastly, we can find the value of $x$ when $f'(x) = 0$. We need to factorise until we get $x$ like this: 
+Lastly, we can find the value of $x$ when $f'(x) equals to 0$. We need to factorise until we get $x$ like this: 
 \[
 	0 = e^x (\cos x - \sin x)
 \]
@@ -62,14 +62,67 @@ We can put the $-\sin x$ to the left hand side, which we will get the expression
 \[
 	\frac {\sin x}{\cos x} = \frac {\cos x}{\cos x}
 \]
-we can replace {\sin x}{\cos x} 
-\begin{align*}
-	f'( \frac{\pi}{4}) 
-	&= e^{\frac{\pi}{4}} ( \frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}})\\ 
-	&= e^{\frac{\pi}{4}} \cdot 0 \\
-	&= 0.
-\end{align*}
+For left hand side, we can replace $\frac{\sin x}{\cos x}$ with $\tan x$. For right hand side, we know $\frac {\cos x}{\cos x}$ equals to 1.
+So we can simplify the expression we get to $\tan x = 1$. 
+
+Now, we can move $\tan$ to right handside, which we will get $ x = \tan^1(1)$. 
+
 %\cdot to put . in math mode
-The final answer at $x = \frac{\pi}{4} $ is 0.
+We know $\tan^1(1) = \frac{\pi}{4} $ which proven that when $f'(x)$ equals to 0, $x = \frac{\pi}{4}$
+
+\end{document}
+
+%final version : 
+\documentclass[11pt, a4paper]{amsart}
+
+\title{MAS116: Presentation Homework 1}
+\author{Nur Farhazni Najwa Binti Farhan}
+\begin{document}
+
+\maketitle
+
+\section{Question}
+
+Differentiate $f(x) = e^x \cos x $, and then prove that $x = \frac{\pi}{4}$ when $f'(x) = 0 $.
+
+\section{Solution}
+Firstly, we apply the product rule for differentiation:
+\[
+\frac{d}{dx}[uv] = u'v + uv'
+\]
+
+From the question and the product rule above, we set $u = e^x $ and $ v = \cos x$. We find the derivatives: 
+\[
+u' =  e^x
+\]
+\[
+v' = -\sin x.
+\]
+
+Next, we apply the product rule which we will get: 
+\begin{align*}
+	f'(x) 
+	&= e^x \cos x + e^x (-\sin x) \\
+	&= e^x (\cos x - \sin x).
+\end{align*}
+
+To find the value of $x$ when $f'(x)$ equal to zero, we set the derivative equal to zero: 
+\[
+	0 = e^x (\cos x - \sin x)
+\]
+Since $e^x$ is never zero, we can simplify to:
+\[
+	0 = \cos x - \sin x
+\]
+We can rearrange the equation by moving $-\sin x$ to the left-hand side, leading to the expression $\sin x  = \cos x$. To simplify this further, we can divide both sides by $\cos x$, resulting in the following: 
+\[
+	\frac {\sin x}{\cos x} = \frac {\cos x}{\cos x}
+\]
+On the left-hand side, we can express $\frac{\sin x}{\cos x}$ as $\tan x$. Meanwhile, the right-hand side simplifies to $\frac {\cos x}{\cos x}$ equal to 1.
+Therefore, we can rewrite the equation as $\tan x = 1$. 
+
+Now, rearranging gives us $ x = \tan^1(1)$.
+
+We know that $\tan^1(1) = \frac{\pi}{4} $ which confirms that when $f'(x)$ equal to 0, indeed equals $x = \frac{\pi}{4}$.
 
 \end{document}
