@@ -22,22 +22,24 @@ Here is an integral:
 
 
 \documentclass[11pt, a4paper]{amsart}
+% a must to put docclass...
 \title{MAS116: Presentation Homework 1}
 \author{Nur Farhazni Najwa Binti Farhan}
 \begin{document}
-
+% a must to put begin and end 
 \maketitle
-
+% \maketitle to generates a title
 \section{Question}
-Differentiate $f(x) = e^x \cos x $, then find the derivative at \( x = \frac{\pi}{4} \).
-
+% \section to put section
+Differentiate $f(x) = e^x \cos x $, then find the derivative at $ x = \frac{\pi}{4} $.
+% we can put $ or \(...\) or \[...\] or \begin{align*} for math mode
 \section{Solution}
 Firstly, we need to apply the product rule:
 \[
 \frac{d}{dx}[uv] = u'v + uv'
 \]
 
-From the question and the product rule above, we need to differentiate \( u = e^x \) and \( v = \cos x \) first. We will get the derivative like this: 
+From the question and the product rule above, we need to differentiate $u = e^x \) and \( v = \cos x$ first. We will get the derivative like this: 
 \[
 u' =  e^x
 \]
@@ -52,7 +54,7 @@ After that, we need to apply the product rule which we will get like this:
 	&= e^x (\cos x - \sin x).
 \end{align*}
 
-Lastly, we can calculate the expression that we get at \( x = \frac{\pi}{4} \).  We know that \( \cos \frac{\pi}{4} = \sin \frac{\pi}{4} = \frac{1}{\sqrt{2}} \). Substituting this into the derivative:
+Lastly, we can calculate the expression that we get at $ x = \frac{\pi}{4} $.  We know that $ \cos \frac{\pi}{4} = \sin \frac{\pi}{4} = \frac{1}{\sqrt{2}} $. Substituting this into the derivative:
 
 \begin{align*}
 	f'( \frac{\pi}{4}) 
@@ -60,7 +62,7 @@ Lastly, we can calculate the expression that we get at \( x = \frac{\pi}{4} \). 
 	&= e^{\frac{\pi}{4}} \cdot 0 \\
 	&= 0.
 \end{align*}
-
-The final answer at \( x = \frac{\pi}{4} \) is 0.
+%\cdot to put . in math mode
+The final answer at $x = \frac{\pi}{4} $ is 0.
 
 \end{document}
