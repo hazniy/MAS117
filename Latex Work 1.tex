@@ -31,7 +31,7 @@ Here is an integral:
 % \maketitle to generates a title
 \section{Question}
 % \section to put section
-Differentiate $f(x) = e^x \cos x $, then find the derivative at $ x = \frac{\pi}{4} $.
+Differentiate $f(x) = e^x \cos x $, then prove that $f'(\frac{\pi}{4}) = 0  $.
 % we can put $ or \(...\) or \[...\] or \begin{align*} for math mode
 \section{Solution}
 Firstly, we need to apply the product rule:
@@ -39,7 +39,7 @@ Firstly, we need to apply the product rule:
 \frac{d}{dx}[uv] = u'v + uv'
 \]
 
-From the question and the product rule above, we need to differentiate $u = e^x \) and \( v = \cos x$ first. We will get the derivative like this: 
+From the question and the product rule above, we need to differentiate $u = e^x $ and $ v = \cos x$ first. We will get the derivative like this: 
 \[
 u' =  e^x
 \]
@@ -54,8 +54,15 @@ After that, we need to apply the product rule which we will get like this:
 	&= e^x (\cos x - \sin x).
 \end{align*}
 
-Lastly, we can calculate the expression that we get at $ x = \frac{\pi}{4} $.  We know that $ \cos \frac{\pi}{4} = \sin \frac{\pi}{4} = \frac{1}{\sqrt{2}} $. Substituting this into the derivative:
-
+Lastly, we can find the value of $x$ when $f'(x) = 0$. We need to factorise until we get $x$ like this: 
+\[
+	0 = e^x (\cos x - \sin x)
+\]
+We can put the $-\sin x$ to the left hand side, which we will get the expression $\sin x  = \cos x$. We can simplify the expression by dividing both side with $\cos x$, which will produce like: 
+\[
+	\frac {\sin x}{\cos x} = \frac {\cos x}{\cos x}
+\]
+we can replace {\sin x}{\cos x} 
 \begin{align*}
 	f'( \frac{\pi}{4}) 
 	&= e^{\frac{\pi}{4}} ( \frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}})\\ 
