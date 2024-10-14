@@ -93,6 +93,13 @@ print("the greatest common divisor for these 2 numbers is", num1)
 #21 and 22 output 1
 #221 and 289 output 17
 
+#alternative : (it says that we need to replace the num1 and num2 with min val and absolute) 
+num1 = int(input("enter the first number: "))
+num2 = int(input("enter the second number: "))
+while num1 != num2:
+    num1, num2 = min(num1,num2), abs(num2-num1)
+print("the greatest common divisor for these 2 numbers is", num1)
+
 #4 how to find a pi using 10 iterations 
 import math
 
