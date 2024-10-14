@@ -76,7 +76,53 @@ while i > 5:
     i = i - 2
 print("We finished with i =", i)
 
-#3
-num1 = int(input("enter a number: "))
-num2 = int(input("enter a sec number: "))
-formula = 
+#3 GCD
+num1 = int(input("enter the first number: "))
+num2 = int(input("enter the second number: "))
+while num1 != num2:
+    if num1 > num2:
+        num1 = num1 - num2
+
+    else:
+        num2 = num2 - num1
+print("the greatest common divisor for these 2 numbers is", num1)
+
+#by hand: can use LCM method
+#9 and 12 output 3
+#17 and 17 output 17
+#21 and 22 output 1
+#221 and 289 output 17
+
+#4 how to find a pi using 10 iterations 
+import math
+
+
+def gauss_legendre_pi(precision=10):
+    # Step 1: Initialize variables
+    a_n = 1.0
+    b_n = 1.0 / math.sqrt(2)
+    t_n = 1.0 / 4.0
+    p_n = 1.0
+
+    for _ in range(precision):
+        # Step 2: Update variables
+        a_next = (a_n + b_n) / 2.0
+        b_next = math.sqrt(a_n * b_n)
+        t_next = t_n - p_n * (a_n - a_next) ** 2
+        p_next = 2 * p_n
+
+        # Move to the next iteration
+        a_n = a_next
+        b_n = b_next
+        t_n = t_next
+        p_n = p_next
+
+    # Step 3: Calculate pi approximation
+    pi_approx = (a_n + b_n) ** 2 / (4 * t_n)
+
+    return pi_approx
+
+
+# Testing the function with a precision of 10 iterations
+pi_approximation = gauss_legendre_pi(10)
+print(f"Approximation of π after 10 iterations: {pi_approximation}")
