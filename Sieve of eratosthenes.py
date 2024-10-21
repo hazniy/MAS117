@@ -1,3 +1,70 @@
+#recap uses of list 
+numbers = list(range(1,2)) #itll output [1]
+numbers = list(range(1,4)) #itll output [1, 2, 3]
+numbers = list(range(0,2)) #itll output [0, 1]
+numbers = list(range(2,4)) #itll output [2, 3]
+print(numbers)
+print(len(numbers)) #itll print 2 bcs in the list only have 2 items
+
+
+#how to list down multiple of a given number 
+number = int(input("enter a number: "))
+print("the multiples are: ")
+for i in range(1,11): 
+    print(number*i,  end = " ")
+    
+#sieve of eratosthenes : list all prime numbers 
+prime = []
+i = 2
+n = int(input("enter a positive integer: ")) #25
+while n < 0 : 
+    n = int(input("enter a positive integer once again: "))
+if n == 0 : 
+    print("theres no prime number for", n)
+else:
+    numbers = list(range(2, n+1)) #[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+    #if (2,n) itll be until 24 only!
+    while i != n:
+        num = numbers[i]
+        newlist = list(range(i, i+2)) #how do i list all the multiple of 2
+print(numbers)
+print("\n There are", len(numbers), "prime numbers up to", n)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 n = int(input("Enter a positive integer: "))
 
 # Step 1: Create a list of all numbers from 2 to n
