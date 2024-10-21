@@ -19,8 +19,6 @@ while i != len(str1):
 print (hamming)
 
 #what if its not the same length
-
-#what if its not the same length
 str1 = str(input("enter the first string: "))
 str2 = str(input("enter the second string: "))
 i = 0 
