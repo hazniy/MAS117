@@ -57,7 +57,7 @@ The positive solution to equation\textasciitilde (\ref{eq:root-2}) is denoted $\
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{lem}[thm]{Lemma}
 \newtheorem{defn}[thm]{Definition}
-\title{MAS116/117: Lab 3 Experiments}
+\title{MAS117: Homework 3}
 \author{Nur Farhazni Najwa Binti Farhan}
 
 \begin{document}
@@ -80,26 +80,36 @@ The positive solution to equation (\ref{eq:root-2}) is denoted $\sqrt{2}$.
 \end{lem}
 
 \begin{proof}
-	What does it mean for numbers to be coprime? Two numbers $a$ and $b$ are called coprime if their greatest common divisor is 1. What is a rational number? A rational number is any number that can be expressed as a fraction $a/b$, where $a$ and $b$ are integers (whole numbers) and $b$ is not zero. We can start with a rational number $r = \frac{a'}{b'}$ and find the greatest common divisor of $a'$ and $b'$, called $d$. The greatest common divisor is the largest number that divides both $a'$ and $b'$. We can simplify the fraction by dividing both $a'$ and $b'$ by $d$ which we will get equation $a = \frac{a'}{d}$ and $b = \frac{b'}{d}$. Now, a and b have no common factors so greatest common divisor is 1. The fraction $a/b$ is in its simplest form, and $a$ and $b$ are coprime. 
+	Two numbers $a$ and $b$ are said to be coprime if their greatest common divisor is 1. A rational number is any number that can be expressed as a fraction $a/b$, where $a$ and $b$ are integers (whole numbers) and $b$ is not zero. We can start with a rational number $r = \frac{a'}{b'}$ and find the greatest common divisor of $a'$ and $b'$, called $c$. The greatest common divisor is the largest number that divides both $a'$ and $b'$. We can simplify the fraction by dividing both $a'$ and $b'$ by $c$ which we will get equation $a = \frac{a'}{c}$ and $b = \frac{b'}{c}$. Now, $a$ and $b$ have no common factors so greatest common divisor is 1. The fraction $a/b$ is in its simplest form, and $a$ and $b$ are coprime. 
 \end{proof}
 
 \begin{thm}
 	The real number $\sqrt{2}$ is irrational.
 \end{thm}
 \begin{proof}
-	We prove this by contradiction. First we assume that $\sqrt{2}$ is rational and then show that this leads to something impossible. Let's assume that $\sqrt{2}$ can be written as a fraction $\frac{a}{b}$, where $a$ and $b$ are whole numbers and the fraction  $\frac{a}{b}$ is in simplest form. So, we start with: 
+	We prove this by contradiction. First we assume that $\sqrt{2}$ is rational and then show that this leads to something impossible. Let's assume that $\sqrt{2}$ can be written as a fraction $\frac{a}{b}$, where $a$ and $b$ are whole numbers and the fraction $\frac{a}{b}$ is in simplest form. We proceed with the following: 
 \[
-   \sqrt{2} = \frac{a}{b}
+   \sqrt{2} = \frac{a}{b}.
 \]
-To get rid of the square root, we square both sides: 
+To eliminate the square root, we square both sides of the equation. 
 \[
    (\sqrt{2})^2 = (\frac{a}{b})^2
 \]
 \[
- 2 = \frac{a^2}{b^2}
+ 2 = \frac{a^2}{b^2}.
 \]
-
-
+After squaring, we multiply both sides by $b^2$ to clear the denominator. This gives us the following equation: 
+\[
+   2b^2 = a^2.
+\]
+This implies that $a^2$ is even because it is equal to $2b^2$, and any number multiplied by $2$ is even.  Since $a^2$ is even, $a$ must be even. Therefore, we can express $a$ as $a = 2c$, where $c$ is some whole number. Substitute $a = 2c$ into the equation: 
+\[
+   2b^2 = (2c)^2
+\]
+\[
+   b^2 = 2c^2.
+\]
+This shows that $b^2$ is also even, implying that $b$ is even too. Now we've shown that both $a$ and $b$ are even, we conclude that they share a common factor of $2$, which contradicts our original assumption that $a$ and $b$ have no common factors.
 \end{proof}
 
 \end{document}
