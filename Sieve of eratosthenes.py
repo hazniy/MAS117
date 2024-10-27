@@ -21,13 +21,13 @@ else:
         while multiple <= n:
             multiple = num * j
             newlist.append(multiple)
-            j += 1  # increment multiplier
+            j = j + 1  # increment multiplier
 
         # 3. Remove multiples from `numbers`
         for val in newlist:
             if val in numbers:
                 numbers.remove(val)  # remove each multiple from the main list
 
-        i += 1  # move to the next number in `numbers`
+        i = i + 1  # move to the next number in `numbers`
 
     print("Prime numbers up to", n, "are:", numbers)
