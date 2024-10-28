@@ -1,0 +1,48 @@
+#function for hamming distance 
+def hamming_distance(str1, str2): 
+    hamming = 0
+    if len(str1) > len(str2): 
+        str2 = str2 + " "
+    else: 
+        str1 = str1 + " "
+        
+    for i in range(len(str1)) : #since str1 and str2 have the same length so it doesnt matter 
+        if str1[i] != str2 : 
+            hamming = hamming + 1
+    return hamming
+    
+#main program 
+str1 = str(input("enter the first string: "))
+str2 = str(input("enter the second string: "))
+print(hamming_distance(str1, str2))
+
+#function square of number
+#base : how to calculate square of number 
+num = int(input("enter a number: "))
+square = num*num
+print(square)
+
+#function square of number
+def square(num): 
+    square = num*num
+    return square
+    
+#main program 
+num = int(input("enter a number: "))
+print("square of",num,"is",square(num))
+
+#base how to change string to list of float 
+num = "1 2 4 5.5 6.789"
+print(num[:1]) #read the first char in str
+
+#function string to vector
+def string_to_vector(nstring): 
+    char = nstring[:1]
+    while char != "": 
+        
+#main program 
+nstring = str(input("enter a list of number: "))
+print(string_to_vector(nstring))
+
+
+    
