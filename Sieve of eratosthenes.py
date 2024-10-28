@@ -12,8 +12,6 @@ for i in range(1,11):
     print(number*i,  end = " ")
 
 i = 0
-j = 2  
-multiple = 0
 newlist = []
 prime = []
 n = int(input("enter a positive integer: ")) 
@@ -30,6 +28,8 @@ else:
     while i < len(numbers):
         num = numbers[i]  # get the current base prime
         prime.append(num)  # store the first num since eg 2,3 are prime nums
+        j = 2  
+        multiple = 0
 
         while multiple <= n:
             multiple = num * j
