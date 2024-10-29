@@ -1,1 +1,59 @@
+\documentclass[11pt, a4paper]{amsart}
+\usepackage{parskip} 
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{hyperref} %produce clickable link
+\usepackage{parskip} 
+\usepackage{amssymb} 
+\usepackage{amsthm} 
+\usepackage{booktabs} 
+	\newcommand{\otoprule}{\midrule[\heavyrulewidth]}
+\title{MAS116/117: Lab 5 Experiments}
+\author{Nur Farhazni Najwa Binti Farhan}
 
+\begin{document} 
+\maketitle
+\tableofcontents
+\section*{Recommended fiction} %* make the number more neat 
+A friend recommended I read some books~\cite{Lessing:Notebook} by Doris Lessing, starting with one of her most famous books. I spent six hours straight just eating up the content of this book~\cite{Coho:iewu}. And I think it's safe to say those six hours changed my life.  This book was an EXTREMELY fast-paced read for me since I was on the edge of my seat the whole time. 
+Wiles was the person who proved Fermat's Last Theorem~\cite[Theorem~2.1]{Wiles:fermats-theorem}. %specific page/chapt of book 
+
+\begin{thebibliography}{99} %99 informs the widest number it is expecting for the citation label
+	\bibitem{Lessing:Notebook}
+		D.~Lessing,
+		\emph{The Golden Notebook},
+		HarperCollins Publishers, 2012.
+	\bibitem{Coho:iewu}
+		Colleen Hoover,
+		\emph{It Ends With Us},
+		Atria Books, 2016.
+\end{thebibliography}
+
+\begin{table}[tbh]
+	\begin{center}
+		\begin{tabular}{llc} %{l|lr} create a vertical line %{ccr}inline to center %{llr} inline to right 
+			\toprule %\hline %create a line 
+			Name & Location & Height (m)\\ 
+			\otoprule
+			Arts Tower & Bolsover Street & 78\\
+			St.~Georges Church & Broad Lane & 43\\
+			Hicks Building & Hounsfield Road & 40\\
+			\bottomrule\\ %rule make it have a bit gap 
+		\end{tabular}
+		\caption{The heights of some buildings at the University of Sheffield}  %put a caption below the table 
+		\label{table:building-heights} %label the name of the table 
+	\end{center}
+\end{table}
+From the Table~\ref{table:building-heights}, we can see blah blah blah.
+
+\section{More commands}
+\subsection{Text in maths mode}
+Let 
+\[
+    \alpha = u +v\qquad \text{and}\qquad y = u - v. %quad make it have a space, qquad add extar spaces 
+\]
+\[
+     \left(\frac{x}{y} + 1\right) %left right for correct size of bracket 
+\]
+
+\end{document} 
