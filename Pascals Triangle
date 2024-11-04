@@ -50,6 +50,45 @@ print(nsplit) #mmg dlm list []
 i.append(nsplit) 
 print(i) #dia dlm [[]]
 
+#homework
+#recap
+#end = "" prevents moving to a new line, so next print statement output on the same line
+def factorial(n):
+    product = 1
+    for i in range(1, n + 1):
+        product = product * i
+    return product
 
+def binomial(n, k):
+    if k > n:
+        return 0
+    if k > n - k: #symmetry in the binomial coefficient (n,k) = (n, n-k)
+        k = n - k
+    total = 1
+    for i in range(k):
+        total = total * (n - i) // (i + 1)
+    return total
+
+def pascals_triangle(num):
+    triangle = []
+    for n in range(num):
+        row = [] #row by row
+        for k in range(n + 1):
+            coefficient = binomial(n, k)
+            row.append(coefficient)
+        triangle.append(row)
+    maxwidth = len(str(triangle[-1][len(triangle[-1]) // 2])) + 2 #width of largest number + padding
+    for n in range(num):
+        leadingspaces = (maxwidth * (num - n - 1)) // 2
+        print(" " * leadingspaces, end="") #print alignment
+        for coefficient in triangle[n]:
+            print(str(coefficient).center(maxwidth), end="")
+        print()
+
+#Main program
+num = int(input("enter a number of rows of Pascal's triangle: "))
+while num <= 0:
+    num = int(input("bro enter a valid number pls"))
+pascals_triangle(num)
 
     
