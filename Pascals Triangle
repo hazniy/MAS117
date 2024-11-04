@@ -79,8 +79,8 @@ def pascals_triangle(num):
         triangle.append(row)
     maxwidth = len(str(triangle[-1][len(triangle[-1]) // 2])) + 2 #width of largest number + padding
     for n in range(num):
-        leadingspaces = (maxwidth * (num - n - 1)) // 2
-        print(" " * leadingspaces, end="") #print alignment
+        spaces = (maxwidth * (num - n - 1)) // 2
+        print(" " * spaces, end="") #print alignment
         for coefficient in triangle[n]:
             print(str(coefficient).center(maxwidth), end="")
         print()
@@ -90,5 +90,3 @@ num = int(input("enter a number of rows of Pascal's triangle: "))
 while num <= 0:
     num = int(input("bro enter a valid number pls"))
 pascals_triangle(num)
-
-    
