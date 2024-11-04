@@ -59,6 +59,7 @@ def factorial(n):
         product = product * i
     return product
 
+#######try using factorial function here (wikipedia)#############
 def binomial(n, k):
     if k > n:
         return 0
