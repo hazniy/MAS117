@@ -57,3 +57,50 @@ Let
 \]
 
 \end{document} 
+
+%homework 
+\documentclass[11pt, a4paper]{amsart}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{parskip}
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+{\begin{proof}[Solution]}
+{\end{proof}}
+
+
+\title{MAS117: Homework 5}
+\author{Nur Farhazni Najwa Binti Farhan}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+	Let $f_n$ denote the $n$\emph{-th of Fibonacci number}. Thus, $f_1 = 1$, $f_2 = 1$ and $f_{n+2} = f_{n+1} + f_n$ for all $n \in \mathbb{N}$. Use induction to show that	
+	
+\[
+	f_1^2 + f_2^2 + \ldots +f_n^2 = f_n f_{n+1}
+\]
+
+for all natural numbers $n \in \mathbb{N}$.
+\end{problem}
+
+\begin{solution}
+	The base case is $f_1^2 = f_1 f_2$. Since $f_1^2 = 1^2 = 1$, $f_1 f_{1+1} = f_1 f_2 = 1.1 = 1$, the base case is true.
+	
+	Now, we assume $f_1^2 + f_2^2 + \ldots +f_\alpha^2 = f_\alpha f_{\alpha+1}$ which $n = \alpha$. We need to prove $f_1^2 + f_2^2 + \ldots +f_\alpha^2 + f_{\alpha+1}^2 = f_{\alpha+1} f_{\alpha+2}$ which $n = \alpha+1$,
+
+	$LHS = f_{\alpha} f_{\alpha+1} + f_{\alpha+1}^2 = f_{\alpha+1}(f_{\alpha} + f_{\alpha+1})$ by induction assumption. 
+
+        Since $f_\alpha + f_{\alpha+1} = f_\alpha+2$, $LHS = f_{\alpha+1}(f_{\alpha} + f_{\alpha+1}) = f_{\alpha+1} f_{\alpha+2} = RHS$.
+
+        Thus, 
+        \[
+	f_1^2 + f_2^2 + \ldots +f_n^2 = f_n f_{n+1}
+\]
+for all natural numbers $n \in \mathbb{N}$ is shown.
+\end{solution}
+\end{document} 
