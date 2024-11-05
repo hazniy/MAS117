@@ -1,0 +1,99 @@
+%homework 
+\documentclass[11pt, a4paper]{amsart}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{listings}
+\usepackage{pgfplots}
+\lstset{
+breaklines=true,
+language=Python,
+frame=single,
+numbers=left,
+showstringspaces=false,
+}
+
+\title{MAS117: Lab 6}
+\author{Nur Farhazni Najwa Binti Farhan}
+
+\begin{document} 
+\maketitle
+\section{Inserting computer code}
+\subsection{The listings package}
+\subsection{The verbatim environment}
+The code below is an implementation of the 'Higher and Lower' game.
+You start an enumerated list with \verb!\begin{enumerate}!
+and end it with \verb+\end{enumerate}+
+\begin{lstlisting}
+
+# an implementation of the game of Higher or Lower
+
+from random import randint
+
+number = randint(1, 100)
+
+print()
+print("Higher or lower?")
+print("----------------")
+print()
+print("Try to guess the number I've thought of between 1 and 100.")
+
+attempts = 0
+guess = 0
+
+while guess != number:
+    attempts += 1
+
+    if attempts > 7:
+        print("Hurry up!")
+
+    attempt_number = str(attempts)
+    guess = int(input("Guess "+attempt_number+": "))
+
+    if guess > number:
+        print(guess, "is too high")
+    elif guess < number:
+        print(guess, "is too low")
+
+print("Correct! The answer was", guess)
+print("You took", attempts, "attempts.")
+
+if attempts > 8 and attempts < 11:
+    print("Too slow for my liking!")
+elif attempts > 10:
+    print("Were you even trying?")
+\end{lstlisting}
+We have a variable \lstinline!height_max!.
+
+\subsection{Including a file of code.}
+Here is the source code of a file.
+\lstset{
+basicstyle=\ttfamily\footnotesize,
+commentstyle=\color{brown},
+keywordstyle=\color{red},
+frame=none,
+}
+\lstinputlisting{higher_lower.py}
+
+We define a function as follows:
+\[
+f(x) =
+\begin{cases}
+x^2 & \text{if } x \ge 0,\\
+0 & \text{if } x < 0.
+\end{cases}
+\]
+
+These are different: $3 - 4 = -1$,
+double-barreled, pages~7--11.
+
+The number before 0 is $-1$.
+Their opening hours are 09:00 --17:00.
+
+\begin{multline*}
+first part of the expression \\
+second part of the expression
+\end{multline*}
+
+\end{document} 
