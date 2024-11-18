@@ -21,9 +21,10 @@ endvertices = []
 endvertices = endvertices + journey() for i in range(10000) 
 vertexcount = len(endvertices) 
 
-for vertex in range(vertices): 
-  percentage = (vertexcount/10000)*100 
-  print(f"Vertex {vertex: {percentage:.2f}%"}
-
+print("\nscore\trelative frequency") 
+print("-"* 26)
+for i in range(1,13): 
+    #print(i, frequency[i]/NO_OF_TRIALS, sep ="\t") #prints out each line in the table, w the entries separated by tab
+    print(i, int(100*frequency[i]/NO_OF_TRIALS), sep="\t") #want to make it graphical just add "*"* before int(100...)
 
   
