@@ -1,0 +1,61 @@
+\documentclass[a4paper,11pt]{amsart}
+
+% Preamble
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Python code style for listings
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=10pt,
+    frame=single,
+    breaklines=true,
+    captionpos=b,
+    showspaces=false,
+    showstringspaces=false
+}
+
+\begin{document}
+
+\title{Semester 1 Mini-project}
+\author{12345678}
+\maketitle
+
+\section{Introduction}
+This project investigates Annie the ant's random walk on a polygon with five vertices, where she moves randomly between adjacent vertices. We simulate her journey using Python, analyze the results, and explore variations such as the effect of step count, polygon size, and three-dimensional movement on a cube.
+
+\section{Methodology}
+We simulated Annie's journey using Python. At each step, she moves randomly to one of the adjacent vertices with equal probability. The journey is repeated 100,000 times to ensure statistical accuracy. Extensions include varying the number of steps and vertices, and modeling movement on a cube.
+
+\section{Investigations}
+\subsection{Effect of Step Count}
+Simulations show that as the number of steps increases, the distribution of percentages across vertices stabilizes due to symmetry and the central limit theorem.
+
+\subsection{Effect of Polygon Size}
+When the number of vertices increases, the percentages decrease uniformly, as the probabilities are evenly distributed across all vertices.
+
+\subsection{Movement on a Cube}
+Modeling Annie’s journey on a cube involves random transitions between connected vertices, producing similar uniform distributions due to symmetry.
+
+\section{Discussion}
+The results illustrate key principles of random walks, symmetry, and probability distributions. They highlight how uniform probabilities lead to even distributions over time.
+
+\section{Conclusion}
+This project demonstrates the power of simulations in understanding random processes. Future work could explore biased probabilities or dynamic graphs.
+
+\appendix
+\section{Python Code}
+The Python code used for the simulations is shown below:
+\lstinputlisting[language=Python]{annie_simulation.py}
+
+\end{document}
