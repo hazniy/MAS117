@@ -4,35 +4,13 @@ import random
 mylist = ["apple", "banana", "cherry"] #element 
 print(random.choice(mylist)) 
 
-import random 
-#define parameters 
-vertices = 5 #theres 5 vertices 
-steps = 7 #there are 7 steps to complete 1 cycle 
-
-def journey(): 
-  currentvertex = 0 
-  for i in range (steps): 
-    step = random.choice([-1,1]) #anticlockwise & clockwise 
-    currentvertex = (currentvertex + step) % vertices
-  return currentvertex
-
-#main 
-endvertices = []
-endvertices = endvertices + journey() for i in range(10000) 
-vertexcount = len(endvertices) 
-
-#print graphical 
-print("\nscore\trelative frequency") 
-print("-"* 26)
-for i in range(1,13): 
-    #print(i, frequency[i]/NO_OF_TRIALS, sep ="\t") #prints out each line in the table, w the entries separated by tab
-    print(i, int(100*frequency[i]/NO_OF_TRIALS), sep="\t") #want to make it graphical just add "*"* before int(100...)
-
 #second attempt 
+import random
+from collections import Counter
 vertices = 5 
 steps = 7 
 
-def jorney(): 
+def journey(): 
   currentposition = 0 #always starts with 0 
   for i in range(steps): 
     nextstep = random.choice([-1,1])
@@ -50,7 +28,12 @@ def jorney():
       currentposition = 0 
   return currentposition 
 
-#main 
-endvertices = []
-endvertices = endvertices + journey() for i in range(10000) 
-vertexcount = len(endvertices) 
+endvertices = [journey() for i in range(10000)]
+vertexcounts = Counter(endvertices)
+
+# Calculate and print percentages
+print("\nvertex\trelative frequency(%)") 
+print("-"* 26)
+for vertex in range(vertices):
+    percentage = (vertex_counts[vertex] / 10000) * 100
+    print(vertex, f"{percentage:.2f}", sep="\t") 
