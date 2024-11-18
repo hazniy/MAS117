@@ -28,12 +28,12 @@ def journey():
       currentposition = 0 
   return currentposition 
 
-endvertices = [journey() for i in range(10000)]
+endvertices = [journey() for i in range(128)] #why 128 ifs 2^7 which have 2 choice clockwise anti and 7 steps
 vertexcounts = Counter(endvertices)
 
 # Calculate and print percentages
 print("\nvertex\trelative frequency(%)") 
 print("-"* 26)
 for vertex in range(vertices):
-    percentage = (vertex_counts[vertex] / 10000) * 100
+    percentage = (vertex_counts[vertex] / 128) * 100
     print(vertex, f"{percentage:.2f}", sep="\t") 
