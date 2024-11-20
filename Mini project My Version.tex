@@ -1,60 +1,75 @@
-\documentclass[a4paper,12pt]{amsart}
+\documentclass[11pt, a4paper]{amsart}
 \usepackage{amsmath}
-\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{parskip}
 \usepackage{listings}
+\lstset{
+breaklines=true,
+language=Python,
+frame=single,
+numbers=left,
+showstringspaces=false,
+}
 
-\title{Extended Project: Random Walk Simulation with User-defined Parameters}
-\author{Your Registration Number}
-\date{\today}
+\title{Semester 1 Mini-project}
+\author{240145846}
 
 \begin{document}
-
 \maketitle
-
 \section{Introduction}
-In this project, we simulate a random walk on a circular graph, where the walk can move in either the clockwise or anti-clockwise direction with each step. The initial implementation of the project had hardcoded values for the number of vertices and steps. However, the project has been extended by allowing the user to specify both the number of steps and the number of vertices. This extension makes the simulation more dynamic and adaptable to different configurations, enabling more flexibility and customization in experimentation.
+This project simulates a random walk by Annie the ant o a pentagon. Annie starts at vertex 0 and takes seven random steps, moving either clockwise or counterclockwise with equal probability.
 
 \section{Objectives}
-The main objective of this project is to simulate a random walk on a circular graph and calculate the relative frequency of the final position after a series of steps. The original version of the project used fixed values for the number of vertices and steps. The extension involves:
+The goal is to simulate Annie's random walk with:
 \begin{itemize}
-  \item Prompting the user to specify the number of vertices in the graph.
-  \item Prompting the user to specify the number of steps for the random walk.
-  \item Calculating and displaying the relative frequency of each vertex as the endpoint of the random walk.
+  \item Fixed values for vertices (5) and steps (7).
+  \item An extended version where the user specifies the number of vertices and steps.
 \end{itemize}
 
-\section{Original Code}
-The original implementation of the random walk simulation used fixed values for the number of vertices and steps. Below is the code without user input:
-
+\section{Python Code: Fixed Values}
 \begin{lstlisting}[language=Python]
 import random
 from collections import Counter
 
-vertices = 5  # Fixed number of vertices
-steps = 7     # Fixed number of steps
+#Define the number of vertices & steps for the journey
+totvertices = 5 #Total vertices
+totsteps = 7 #Number of steps
 
-def journey(): 
-    currentposition = 0  # Start at position 0
-    for i in range(steps):
-        nextstep = random.choice([-1, 1])  # Randomly choose direction
-        currentposition += nextstep
-    currentposition %= vertices  # Wrap position within vertex range
-    return currentposition
+def randomwalk():
+  position = 0 #Start position is always vertex 0
+  for step in range(totsteps):
+    move = random.choice([-1,1]) #Randomly choose the next step which -1(backward) or 1(forward)
+    position = position + move #Update the current position
 
-# Perform 128 random journeys with fixed vertices and steps
-endvertices = [journey() for _ in range(128)]
+#Handle cases where the position becomes negative (which looping back to positive vertices)
+  if position < 0:
+    #Map (-) positions to the corresponding (+) vertices
+    if position == -1 or position == -6:
+      position = 4
+    elif position == -2 or position == -7:
+      position = 3
+    elif position == -3:
+      position = 2
+    elif position == -4:
+      position = 1
+    elif position == -5:
+      position = 0
+  return position #Return the final position after the journey
 
-# Count occurrences of each vertex
-vertexcounts = Counter(endvertices)
+finalpositions = [randomwalk() for i in range(128)] #Simulate 128 journeys (128 is chosen becuase it's 2^7, cont.
+positioncounts = Counter(finalpositions)           #where 7 is the num of steps and 2 choices (backward & forward)
 
-# Calculate and print percentages
-print("\nvertex\trelative frequency (%)")
-print("-" * 26)
-for vertex in range(vertices):
-    percentage = (vertexcounts[vertex] / 128) * 100
-    print(vertex, f"{percentage:.2f}", sep="\t")
+#Calculate and print percentages
+print("\nvertex\tfrequency(%)")
+print("-"* 26)
+for vertex in range(totvertices):
+    #Calculate the percentage for each vertex
+    frequency = (positioncounts[vertex] / 128) * 100
+    print(vertex, f"{frequency:.3f}", sep="\t")
 \end{lstlisting}
 
-In this original version, the number of vertices was fixed at 5, and the number of steps was fixed at 7. The simulation was run 128 times to determine the relative frequencies of the final positions after each random walk. 
+Here, the program simulates 128 random walks and shows the frequency of each final vertex. The fixed values are 5 vertices and 7 steps.
 
 \section{Extended Project: Adding User Prompts for Vertices and Steps}
 The project has been extended to allow the user to specify both the number of vertices and the number of steps for the random walk. The updated code is shown below:
@@ -63,86 +78,46 @@ The project has been extended to allow the user to specify both the number of ve
 import random
 from collections import Counter
 
-def journey(vertices, steps):
-    currentposition = 0  # Start at position 0
-    for _ in range(steps):
-        nextstep = random.choice([-1, 1])  # Randomly choose direction
-        currentposition += nextstep
-    currentposition %= vertices  # Wrap position within vertex range
-    return currentposition
+def randomwalk(vertices, steps):
+    position = 0
+    for i in range(steps):
+        move = random.choice([-1, 1])
+        position = position + move
+    position = position % vertices #if vertices = 5: positions -1 and 5 both map to vertex 4. Always Positive
+    return position
 
-# Prompt the user for the number of vertices and steps
-vertices = int(input("Enter the number of vertices: "))
+#Prompt the user for the number of steps
 steps = int(input("Enter the number of steps: "))
+vertices = int(input("Enter the number of vertices: "))
+finalpositions = [randomwalk(vertices, steps) for i in range(pow(2, steps))]
+positioncounts = Counter(finalpositions)
 
-# Perform 128 random journeys with the user-defined number of vertices and steps
-endvertices = [journey(vertices, steps) for _ in range(128)]
-
-# Count occurrences of each vertex
-vertexcounts = Counter(endvertices)
-
-# Calculate and print percentages
-print("\nvertex\trelative frequency (%)")
+print("\nvertex\tfrequency (%)")
 print("-" * 26)
 for vertex in range(vertices):
-    percentage = (vertexcounts[vertex] / 128) * 100
-    print(vertex, f"{percentage:.2f}", sep="\t")
+    frequency = (positioncounts[vertex] / (pow(2, steps))) * 100
+    print(vertex, f"{frequency:.3f}", sep="\t")
 \end{lstlisting}
 
-In this extended version, the number of vertices and steps are provided as inputs by the user at the start of the program. The journey function now accepts both parameters, making it more flexible and adaptable to different configurations. The program performs the same number of random journeys (128), but the user can experiment with different graph sizes and walk lengths.
+In this version, users input the number of vertices and steps. The program calculates the relative frequency of each final vertex.
 
 \section{Effects of the Number of Steps and Vertices}
-The inclusion of user input for both the number of steps and the number of vertices allows for greater flexibility in experimenting with the random walk simulation. Here are some effects that changing these parameters has on the simulation:
-
-\subsection{Effect of the Number of Steps}
-The number of steps directly influences how far the random walk moves along the graph. A larger number of steps allows the random walk to explore more positions and leads to a more distributed final position. Conversely, fewer steps limit the walk's ability to explore the graph, resulting in more concentrated final positions near the starting point.
-
+\subsection{Number of Steps}
+More steps increase the likelihood of reaching different vertices.
 For example:
 \begin{itemize}
-    \item With fewer steps (e.g., 3 steps), the random walk will likely end up closer to the starting position (0).
-    \item With more steps (e.g., 10 steps), the random walk will have a higher chance of visiting more vertices and moving further from the starting position.
+    \item With fewer steps (e.g., 3 steps), results are concentrated near the starting point.
+    \item With more steps (e.g., 10 steps), resultrs are more spread out.
 \end{itemize}
 
-\subsection{Effect of the Number of Vertices}
-The number of vertices determines the size of the circular graph. A larger number of vertices increases the number of possible positions that the random walk can end up at. On the other hand, a smaller number of vertices limits the number of possible endpoints, which can lead to more concentrated outcomes.
-
+\subsection{Number of Vertices}
+Increasing the vertices spreads the distribution.
 For example:
 \begin{itemize}
-    \item With fewer vertices (e.g., 3 vertices), the final positions tend to be concentrated in a smaller subset of the vertices.
-    \item With more vertices (e.g., 10 vertices), the random walk is more spread out, and the final position is less likely to concentrate on any particular vertex.
+    \item With fewer vertices (e.g., 3 vertices), the final positions are concentrated.
+    \item With more vertices (e.g., 10 vertices), the final positions are more varied.
 \end{itemize}
 
-Thus, both the number of steps and vertices influence the distribution of the final positions. The larger the number of vertices, the more spread out the distribution of final positions will be. Similarly, the more steps taken, the more likely the random walk will cover a wider range of vertices.
-
-\section{Results}
-Below are some results from running the simulation with different numbers of vertices and steps.
-
-\subsection{5 Vertices and 7 Steps}
-When the number of vertices is set to 5 and the number of steps is 7, the following distribution of final positions was observed:
-
-\[
-\text{vertex\_frequency} = \{0: 20.31, 1: 25.00, 2: 18.75, 3: 17.19, 4: 18.75\}
-\]
-
-\subsection{10 Vertices and 7 Steps}
-When the number of vertices is increased to 10, and the number of steps remains at 7, the distribution becomes more spread out:
-
-\[
-\text{vertex\_frequency} = \{0: 12.50, 1: 8.59, 2: 10.94, 3: 9.38, 4: 11.72, 5: 9.38, 6: 7.81, 7: 9.38, 8: 10.16, 9: 10.16\}
-\]
-
-\section{Discussion}
-The extension of the project by allowing user input for the number of steps and vertices has a profound impact on the random walk simulation. With more vertices, the random walk becomes more spread out, and the final positions are less likely to concentrate on a single vertex. As the number of steps increases, the random walk has a higher chance of visiting more vertices, leading to a more uniform distribution of the final positions.
-
-\begin{itemize}
-    \item With fewer vertices, the random walk is more constrained, and the final positions tend to concentrate more on a smaller set of vertices.
-    \item With more vertices, the walk becomes more distributed, and the final positions are spread across a larger number of vertices.
-    \item The number of steps also plays a significant role in determining how far the walk can travel. More steps lead to greater exploration of the graph.
-\end{itemize}
-
-This extension of the project demonstrates the importance of customizable parameters in simulations, allowing users to experiment with different configurations and better understand the underlying dynamics of random walks.
-
-\section{Conclusion}
-The extension of the original random walk simulation by allowing the user to input both the number of steps and the number of vertices significantly enhances the project’s flexibility and applicability. The ability to customize the number of vertices and steps enables more dynamic and varied simulations, leading to a better understanding of how these parameters affect the random walk’s final position distribution. Further improvements could include graphical visualizations of the random walk or additional complexities, such as biased random walks or walks on non-circular graphs.
+The number of steps and vertices both play a big role in shaping where Annie ends up. With more vertices, her final positions are spread out across a larger range. Similarly, taking more steps increases the chances of her exploring more of the vertices along the way.
 
 \end{document}
