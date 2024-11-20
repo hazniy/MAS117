@@ -57,9 +57,7 @@ def journey():
     for i in range(steps):
         nextstep = random.choice([-1, 1])  #Randomly choose direction
         currentposition = currentposition + nextstep
-    #Use modular arithmetic to wrap position within the vertex range
-    #For example, if vertices = 5: positions -1 and 5 both map to vertex 4
-    currentposition = currentposition % vertices
+    currentposition = currentposition % vertices  #if vertices = 5: positions -1 and 5 both map to vertex 4. Always Positive
     return currentposition
 
 endvertices = [journey() for i in range(128)]
