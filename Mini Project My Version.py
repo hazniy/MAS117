@@ -1,142 +1,123 @@
-#choice() method returns a randomly selected element fro. the specified sequence 
-#example choice() 
-import random 
-mylist = ["apple", "banana", "cherry"] #element 
-print(random.choice(mylist)) 
-
-#second attempt 
+#choice() method : Returns a randomly selected element from the specified sequence.
+#Example choice()
 import random
-from collections import Counter
-vertices = 5 
-steps = 7 
+mylist = ["apple", "banana", "cherry"] #list of elements
+print(random.choice(mylist))
 
-def journey(): 
-  currentposition = 0 #always starts with 0 
-  for i in range(steps): 
-    nextstep = random.choice([-1,1])
-    currentposition = currentposition + nextstep
-  if currentposition < 0: 
-    if currentposition == -1 or currentposition == -6: 
-      currentposition = 4 
-    elif currentposition == -2 or currentposition == -7: 
-      currentposition = 3
-    elif currentposition == -3: 
-      currentposition = 2 
-    elif currentposition == -4: 
-      currentposition = 1
-    elif currentposition == -5: 
-      currentposition = 0 
-  return currentposition 
-
-endvertices = [journey() for i in range(128)] #why 128 ifs 2^7 which have 2 choice clockwise anti and 7 steps
-vertexcounts = Counter(endvertices)
-
-# Calculate and print percentages
-print("\nvertex\trelative frequency(%)") 
-print("-"* 26)
-for vertex in range(vertices):
-    percentage = (vertex_counts[vertex] / 128) * 100
-    print(vertex, f"{percentage:.2f}", sep="\t") 
-
+#First attempt (only with 5 vertices)
 import random
 from collections import Counter
 
-# Constants
-vertices = 5
-steps = 7
+#Define the number of vertices & steps for the journey
+vertices = 5 #Total vertices
+steps = 7 #Number of steps
 
 def journey():
-    """
-    Simulates a random journey on a circular graph with `vertices` nodes.
-    """
-    currentposition = 0  # Start at position 0
-    for _ in range(steps):
-        nextstep = random.choice([-1, 1])  # Randomly choose direction
-        currentposition += nextstep
-    # Use modular arithmetic to wrap position within the vertex range
-    currentposition %= vertices
+  currentposition = 0 #Start position is always vertex 0
+  for i in range(steps):
+    nextstep = random.choice([-1,1]) #Randomly choose the next step which -1(backward) or 1(forward)
+    currentposition = currentposition + nextstep #Update the current position
+
+#Handle cases where the position becomes negative (which looping back to positive vertices)
+  if currentposition < 0:
+    #Map (-) positions to the corresponding (+) vertices
+    if currentposition == -1 or currentposition == -6:
+      currentposition = 4
+    elif currentposition == -2 or currentposition == -7:
+      currentposition = 3
+    elif currentposition == -3:
+      currentposition = 2
+    elif currentposition == -4:
+      currentposition = 1
+    elif currentposition == -5:
+      currentposition = 0
+  return currentposition #Return the final position after the journey
+
+endvertices = [journey() for i in range(128)] #Simulate 128 journeys (128 is chosen becuase it's 2^7, cont.
+vertexcounts = Counter(endvertices)           #where 7 is the num of steps and 2 choices (backward & forward)
+
+#Calculate and print percentages
+print("\nvertex\tfrequency(%)")
+print("-"* 26)
+for vertex in range(vertices):
+    #Calculate the percentage for each vertex
+    percentage = (vertexcounts[vertex] / 128) * 100
+    print(vertex, f"{percentage:.3f}", sep="\t")
+
+#Second attempt (with a flexible number of vertices)
+import random
+from collections import Counter
+
+#Constants
+vertices = 5 #Total number of vertices
+steps = 7 #Number of steps
+
+def journey():
+    currentposition = 0  #Start at vertex 0
+    for i in range(steps):
+        nextstep = random.choice([-1, 1])  #Randomly choose direction
+        currentposition = currentposition + nextstep
+    #Use modular arithmetic to wrap position within the vertex range
+    #For example, if vertices = 5: positions -1 and 5 both map to vertex 4
+    currentposition = currentposition % vertices
     return currentposition
 
-# Perform 128 random journeys
-endvertices = [journey() for _ in range(128)]
-
-# Count occurrences of each vertex
+endvertices = [journey() for i in range(128)]
 vertexcounts = Counter(endvertices)
 
-# Calculate and print percentages
-print("\nvertex\trelative frequency (%)")
+print("\nvertex\tfrequency (%)")
 print("-" * 26)
 for vertex in range(vertices):
     percentage = (vertexcounts[vertex] / 128) * 100
-    print(vertex, f"{percentage:.2f}", sep="\t")
+    print(vertex, f"{percentage:.3f}", sep="\t")
 
-#steps 
+#Extending the project further
+#What effect the number of steps has on the percentages
 import random
 from collections import Counter
 
-# Constants
+#Constants
 vertices = 5
 
 def journey(steps):
-    """
-    Simulates a random journey on a circular graph with `vertices` nodes.
-    The number of steps is passed as an argument.
-    """
-    currentposition = 0  # Start at position 0
-    for _ in range(steps):
-        nextstep = random.choice([-1, 1])  # Randomly choose direction
-        currentposition += nextstep
-    # Use modular arithmetic to wrap position within the vertex range
-    currentposition %= vertices
+    currentposition = 0
+    for i in range(steps):
+        nextstep = random.choice([-1, 1])
+        currentposition = currentposition + nextstep
+    currentposition = currentposition % vertices
     return currentposition
 
-# Prompt the user for the number of steps
+#Prompt the user for the number of steps
 steps = int(input("Enter the number of steps: "))
-
-# Perform 128 random journeys with the user-defined number of steps
-endvertices = [journey(steps) for _ in range(128)]
-
-# Count occurrences of each vertex
+endvertices = [journey(steps) for i in range(pow(2, steps))]
 vertexcounts = Counter(endvertices)
 
-# Calculate and print percentages
-print("\nvertex\trelative frequency (%)")
+print("\nvertex\tfrequency (%)")
 print("-" * 26)
 for vertex in range(vertices):
-    percentage = (vertexcounts[vertex] / 128) * 100
-    print(vertex, f"{percentage:.2f}", sep="\t")
+    percentage = (vertexcounts[vertex] / (pow(2, steps))) * 100
+    print(vertex, f"{percentage:.3f}", sep="\t")
 
-#vertices 
+#Change the number of vertices on the polygon
 import random
 from collections import Counter
 
 def journey(vertices, steps):
-    """
-    Simulates a random journey on a circular graph with `vertices` nodes.
-    The number of steps is passed as an argument.
-    """
-    currentposition = 0  # Start at position 0
-    for _ in range(steps):
-        nextstep = random.choice([-1, 1])  # Randomly choose direction
-        currentposition += nextstep
-    # Use modular arithmetic to wrap position within the vertex range
-    currentposition %= vertices
+    currentposition = 0
+    for i in range(steps):
+        nextstep = random.choice([-1, 1])
+        currentposition = currentposition + nextstep
+    currentposition = currentposition % vertices
     return currentposition
 
-# Prompt the user for the number of vertices and steps
+#Prompt the user for the number of vertices and steps
 vertices = int(input("Enter the number of vertices: "))
 steps = int(input("Enter the number of steps: "))
-
-# Perform 128 random journeys with the user-defined number of vertices and steps
-endvertices = [journey(vertices, steps) for _ in range(128)]
-
-# Count occurrences of each vertex
+endvertices = [journey(vertices, steps) for i in range(pow(2, steps))]
 vertexcounts = Counter(endvertices)
 
-# Calculate and print percentages
 print("\nvertex\trelative frequency (%)")
 print("-" * 26)
 for vertex in range(vertices):
-    percentage = (vertexcounts[vertex] / 128) * 100
+    percentage = (vertexcounts[vertex] / (pow(2, steps))) * 100
     print(vertex, f"{percentage:.2f}", sep="\t")
-
