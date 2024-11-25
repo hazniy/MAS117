@@ -13,7 +13,7 @@ def infinite_limit_table(f, n):
     for i in range(1, n + 1):
         x = 10**i
         value = f(x)
-        print("{0:14.2f}  {1:14.9f}".format
+        print("{0:14.2f}  {1:14.9f}".format #0f means dont have any deci, <14 to left align
             (float(x), value))
 
     print(horizontal_line)
