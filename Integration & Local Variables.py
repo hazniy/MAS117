@@ -1,0 +1,30 @@
+import math 
+
+
+def midpoint_approximation(f, N, a, b): 
+   """
+   Calculate an approximation to int_a^b f(x) 
+   with N midpoint-rectangles 
+   """
+   approximation = 0 
+   for i in range(N): 
+       approximation += (b - a)/N * f(a + (i + 1/2)*(b - a)/N) 
+   return approximation
+
+
+def f(x): 
+  """Calculate x squared."""
+  return x**2 
+
+
+def g(x): 
+  """Calculate x squared."""
+  return math.exp(x**2) 
+
+
+print("int_0^1 x**2 dx is roughly {0:.6f}".format( #/i means integral for latex 
+  midpoint_approximation(f, 2, 0, 1)))
+print("int_0^1 e**(x**2) dx is roughly {0:.6f}".format(
+  midpoint_approximation(g, 1000, 0, 1)))
+
+def trapezoidal_approximation(f, N, a, b): 
