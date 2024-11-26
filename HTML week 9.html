@@ -1,1 +1,627 @@
 
+<!DOCTYPE HTML>
+<html lang="en-gb">
+
+<head>
+  <title>MAS116/117: Mathematical Investigation Skills</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="lab_8.css">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+  
+  <script type="text/javascript">
+    div_toggle = function(id) {
+      var e = document.getElementById(id);
+      if (e && e.style.display == 'none') {
+        e.style.display = 'block';
+      }
+      else {
+        e.style.display = 'none';
+      }
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js" id="MathJax-script" async
+    integrity="sha384-AHAnt9ZhGeHIrydA1Kp1L7FN+2UosbF7RQg6C+9Is/a7kDpQ1684C2iH2VWil6r4" 
+    crossorigin="anonymous">
+  </script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
+
+</head>
+
+<body>
+  <header>
+    <h1>MAS116/117: Mathematical Investigation Skills</h1>
+    <h2 class="subtitle">
+      Lecturers: 
+      <a href="https://sam-dolan.sites.sheffield.ac.uk/">Dr Sam Dolan</a>, 
+      <a href="https://simonwillerton.staff.shef.ac.uk/">Dr Simon Willerton</a>
+    </h2>
+    <img src="mas116.jpg" width=300px alt="Module image">
+      
+    <p>
+      This page will be updated as the module progresses.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Course materials</h2>
+      <p>
+        The materials for the presentation part of the module are below. If you encounter any accessibility issues, please see the <a href="https://docs.google.com/document/d/1nDUVSp961xD32mLUlB1GwTmSr7W6trNXOwgDEmJzKPY/">SoMaS Accessibility Statement</a> or contact Sam or Simon directly.
+      </p>
+
+      <h3>Presentation (Simon Willerton)</h3>
+      <p>
+        The materials for the lectures and labs on presentation from Semester 1 are below. An HTML version is provided for accessibility reasons (i.e. the use of screen-readers), but the conversion (which is automatic) may not be perfect.
+      </p>
+
+      <table class="week_by_week">
+        <thead>
+          <tr>
+            <th>Week</th>
+            <th>Lectures</th>
+            <th>Computer labs</th>
+            <th>My lab attempts</th>
+            <th>Model homework</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td class="week">1</td>
+            <td>
+              <!--
+              Introduction:
+              <a href="docs/introduction_to_module.pdf">slides</a>
+              <br/>
+              -->
+              LaTeX and communicating mathematics: 
+              <a href="docs/MAS116_presentation_lecture_1_slides.pdf" target="_blank">slides</a>,
+              <a href="docs/MAS116_presentation_lecture_1_handout.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lecture_1_handout.html" target="_blank">HTML</a>
+            
+            </td>
+            <td>Lab 1:
+              <a href="docs/MAS116_presentation_lab_1.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lab_1.html" target="_blank">HTML</a> 
+            </td>
+            <td>
+              <a href="docs/MAS116_presentation_lab_attempt_1.pdf" target="_blank">PDF</a>, 
+              <a href="docs/MAS116_presentation_lab_attempt_1.tex" target="_blank">LaTeX</a>
+            </td>
+            <td>
+              <a href="docs/MAS116_presentation_model_hw_1.pdf" target="_blank">PDF</a>, 
+              <a href="docs/MAS116_presentation_model_hw_1.tex" target="_blank">LaTeX</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="week">2</td>
+            <td>About LaTeX: 
+              <a href="docs/MAS116_presentation_lecture_2_slides.pdf" target="_blank">slides</a>,
+              <a href="docs/MAS116_presentation_lecture_2_handout.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lecture_2_handout.html" target="_blank">HTML</a>
+              <br>
+              Activity handouts: 
+              <a href="docs/MAS116_presentation_lecture_2_document_1.pdf" target="_blank">1</a>
+              <a href="docs/MAS116_presentation_lecture_2_document_2.pdf" target="_blank">2</a>
+            </td>
+            <td>Lab 2:
+              <a href="docs/MAS116_presentation_lab_2.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lab_2.html" target="_blank">HTML</a> 
+            </td>
+            <td>
+              <a href="docs/MAS116_presentation_lab_attempt_2.pdf" target="_blank">PDF</a>, 
+              <a href="docs/MAS116_presentation_lab_attempt_2.tex" target="_blank">LaTeX</a>
+            </td>
+            <td>
+              <a href="docs/MAS116_presentation_model_hw_2.pdf" target="_blank">PDF</a>, 
+              <a href="docs/MAS116_presentation_model_hw_2.tex" target="_blank">LaTeX</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="week">3</td>
+            <td>Packages, Environments and More Presentation: 
+              <a href="docs/MAS116_presentation_lecture_3_slides.pdf" target="_blank">slides</a>,
+              <a href="docs/MAS116_presentation_lecture_3_handout.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lecture_3_handout.html" target="_blank">HTML</a>
+              <br>
+              Activity handouts: 
+              <a href="docs/MAS116_presentation_lecture_3_activity.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lecture_3_activity.tex" target="_blank">LaTeX</a>
+            </td>
+            <td>Lab 3:
+              <a href="docs/MAS116_presentation_lab_3.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lab_3.html" target="_blank">HTML</a> 
+            </td>
+            <td>
+              <a href="docs/MAS116_presentation_lab_attempt_3.pdf" target="_blank">PDF</a>, 
+              <a href="docs/MAS116_presentation_lab_attempt_3.tex" target="_blank">LaTeX</a>
+            </td>
+            <td>
+              <a href="docs/MAS116_presentation_model_hw_3.pdf" target="_blank">PDF</a>, 
+              <a href="docs/MAS116_presentation_model_hw_3.tex" target="_blank">LaTeX</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="week">4</td>
+            <td>Images and a Bit of Punctuation: 
+              <a href="docs/MAS116_presentation_lecture_4_slides.pdf" target="_blank">slides</a>,
+              <a href="docs/MAS116_presentation_lecture_4_handout.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lecture_4_handout.html" target="_blank">HTML</a>
+              <br />
+              Activity handouts: 
+              <a href="docs/MAS116_presentation_lecture_4_activity.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lecture_4_activity.html" target="_blank">HTML</a>
+            </td>
+            <td>Lab 4:
+              <a href="docs/MAS116_presentation_lab_4.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lab_4.html" target="_blank">HTML</a> 
+            </td>
+            <td>
+              <a href="docs/MAS116_presentation_lab_attempt_4.pdf" target="_blank">PDF</a>, 
+              <a href="docs/MAS116_presentation_lab_attempt_4.tex" target="_blank">LaTeX</a>
+            </td>
+            <td>
+              <a href="docs/MAS116_presentation_model_hw_4.pdf" target="_blank">PDF</a>, 
+              <a href="docs/MAS116_presentation_model_hw_4.tex" target="_blank">LaTeX</a>
+            
+            </td>
+          </tr>
+          <tr>
+            <td class="week">5</td>
+            <td> 
+              Common LaTeX let-downs and grammatical grumbles:
+              <a href="docs/MAS116_presentation_lecture_5_slides.pdf" target="_blank">slides</a>,
+              <a href="docs/MAS116_presentation_lecture_5_handout.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lecture_5_handout.html" target="_blank">HTML</a>
+              <br />
+              Activity handouts: 
+              <a href="docs/MAS116_presentation_lecture_5_activity.pdf" target="_blank">PDF</a>
+              <br />
+              Improved version:
+              <a href="docs/MAS116_presentation_lecture_5_activity_improved.pdf" target="_blank">PDF</a>
+            </td>
+            <td>Lab 5:
+              <a href="docs/MAS116_presentation_lab_5.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lab_5.html" target="_blank">HTML</a> 
+            </td>
+            <td>
+              <a href="docs/MAS116_presentation_lab_attempt_5.pdf" target="_blank">PDF</a>, 
+              <a href="docs/MAS116_presentation_lab_attempt_5.tex" target="_blank">LaTeX</a>
+            </td>
+            <td> 
+              <a href="docs/MAS116_presentation_model_hw_5.pdf" target="_blank">PDF</a>, 
+              <a href="docs/MAS116_presentation_model_hw_5.tex" target="_blank">LaTeX</a>
+            
+            </td>
+          </tr>
+
+          <tr>
+            <td class="week">6</td>
+            <td> 
+              Use of unfair means and mini-project 1
+              <a href="docs/MAS116_presentation_lecture_6_slides.pdf" target="_blank">slides</a>,
+              <a href="docs/MAS116_presentation_lecture_6_handout.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lecture_6_handout.html" target="_blank">HTML</a>
+            </td>
+            <td>Lab 6:
+              <a href="docs/MAS116_presentation_lab_6.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lab_6.html" target="_blank">HTML</a> 
+            </td>
+            
+            <td>
+              <a href="docs/MAS116_presentation_lab_attempt_6.pdf" target="_blank">PDF</a>, 
+              <a href="docs/MAS116_presentation_lab_attempt_6.tex" target="_blank">LaTeX</a>
+            </td>
+            <td> 
+            Mini-project
+            </td>
+          </tr>
+          <tr class="break">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr> 
+          <tr>
+            <td class="week">8</td>
+            <td> 
+              An introduction to HTML:
+              <a href="docs/MAS116_presentation_lecture_7_slides.pdf" target="_blank">slides</a>,
+              <a href="docs/MAS116_presentation_lecture_7_handout.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lecture_7_handout.html" target="_blank">HTML</a>
+              <br />
+              Activity handouts: 
+              <a href="docs/MAS116_presentation_lecture_7_activity_good.html" target="_blank">HTML page</a>
+              <br />
+              Erroneous version:
+              <a href="docs/MAS116_presentation_lecture_7_activity_bad_html.txt" target="_blank">HTML 1</a>,
+              <a href="docs/MAS116_presentation_lecture_7_activity_formatted_bad_html.txt" target="_blank">HTML 2</a>
+            </td>
+            <td>Lab 7:
+              <a href="docs/MAS116_presentation_lab_7.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lab_7.html" target="_blank">HTML</a>,
+              <a href="docs/lab_7.css">CSS</a>
+            </td>
+            <td>
+                <a href="docs/MAS116_presentation_lab_attempt_7.html" targe
+                t="_blank">HTML 1</a>, 
+                <a href="docs/lab_7_about.html" target="_blank">HTML 2</a>
+              </td>
+            <td>
+              (mini-project)
+            </td>
+          </tr>
+
+          <tr>
+            <td class="week">9</td>
+            <td> 
+              An introduction to CSS:
+              <a href="docs/MAS116_presentation_lecture_8_slides.pdf" target="_blank">slides</a>,
+              <a href="docs/MAS116_presentation_lecture_8_handout.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lecture_8_handout.html" target="_blank">HTML</a>
+            </td>
+            <td>Lab 8:
+              <a href="docs/MAS116_presentation_lab_8.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lab_8.html" target="_blank">HTML</a>
+            </td>
+            <td>
+				      <!--<a href="docs/lab_8.css" target="_blank">CSS</a>
+            --> 
+            </td>
+            <td>
+              (peer assessment)
+            </td>
+          </tr>
+        <!--
+          <tr>
+            <td class="week">10</td>
+            <td> 
+              Peer assessment:
+              <a href="docs/MAS116_presentation_lecture_8_slides.pdf" target="_blank">slides</a>,
+              <a href="docs/MAS116_presentation_lecture_8_handout.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lecture_8_handout.html" target="_blank">HTML</a>
+            </td>
+            <td>Lab 8:
+              <a href="docs/MAS116_presentation_lab_8.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lab_8.html" target="_blank">HTML</a>
+              <br>
+              [<a href="docs/lab_8_template.html" target="_blank">lab_8_template.html</a>,
+              <a href="docs/newton.css" target="_blank">newton.css</a>,
+              <a href="docs/newton.txt" target="_blank">newton.txt</a>,
+              <a href="docs/gravitational_force.py" target="_blank">gravitational_force.py</a>]
+            </td>
+            <td>
+              <a href="docs/MAS116_presentation_lab_attempt_8.html" target="_blank">HTML</a>, 
+                <a href="docs/lab_8_attempt.css" target="_blank">CSS</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="week">11</td>
+            <td> 
+                Use of unfair means and Group Project 1:
+                <a href="docs/MAS116_presentation_lecture_9_slides.pdf" target="_blank">slides</a>,
+                <a href="docs/MAS116_presentation_lecture_9_handout.pdf" target="_blank">PDF</a>,
+                <a href="docs/MAS116_presentation_lecture_9_handout.html" target="_blank">HTML</a>
+              </td>
+            <td>Lab 9:
+              <a href="docs/MAS116_presentation_lab_9.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lab_9.html" target="_blank">HTML</a>
+              <br>
+              [<a href="docs/projectiles.xlsx">projectiles.xlsx</a>,
+              <a href="docs/solver.xlsx">solver.xlsx</a>]
+              <br>
+            </td>
+            <td>
+              Projectiles:
+              <a href="docs/MAS116_presentation_lab_attempt_9_projectiles.xlsx">Excel</a>,
+              <a href="https://docs.google.com/spreadsheets/d/12o9g3KC1QJUhDJPO0UgbLRmY8LmXV-Q2SCCNAQrMfKY/edit?usp=sharing">Google Sheet</a>
+              <br>
+              Euclidean algorithm:
+              <a href="docs/MAS116_presentation_lab_attempt_9_euclid.xlsx">Excel</a>,
+              <a href="https://docs.google.com/spreadsheets/d/15LFMSYcCJZxHIJltSgz2OKCZ59VgZQgdX6QZ--1shP4/edit?usp=sharing">Google Sheet</a>
+              <br>
+              Solver:
+              <a href="docs/MAS116_presentation_lab_attempt_9_solver.xlsx">Excel</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="week">12</td>
+            <td> 
+                Giving talks with Beamer:
+                <a href="docs/MAS116_presentation_lecture_10_slides.pdf" target="_blank">slides</a>,
+                <a href="docs/MAS116_presentation_lecture_10_handout.pdf" target="_blank">PDF</a>,
+                <a href="docs/MAS116_presentation_lecture_10_handout.html" target="_blank">HTML</a>
+              </td>
+            <td>Lab 10:
+              <a href="docs/MAS116_presentation_lab_10.pdf" target="_blank">PDF</a>,
+              <a href="docs/MAS116_presentation_lab_10.html" target="_blank">HTML</a>
+            </td>
+            <td>
+              <a href="docs/MAS116_presentation_lab_attempt_10.pdf" target="_blank">PDF</a>, 
+              <a href="docs/MAS116_presentation_lab_attempt_10.tex" target="_blank">LaTeX</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          -->
+        </tbody>
+      </table>
+    </section>
+
+<!--
+    Here is guidance on uploading zip files to the upload system: <a href="docs/shef-only/MAS115_AY21_22_group_project_websites_uploading_guidance.pdf" target="_blank">PDF</a>, <a href="docs/shef-only/MAS115_AY21_22_group_project_websites_uploading_guidance.html">HTML</a></p>
+
+    <hr />
+-->
+
+    <section>
+      <h2>Extras</h2>
+      <p>We will add here things related to the course that are useful or interesting.</p>
+
+      <section>
+        <h3>General materials</h3>
+        <ul>
+        <!--
+          <li>The Intro Week 
+          <a href="https://drive.google.com/file/d/1HP4PT-k-qQE91W-xwEiWtojuHzcenzMj/view?usp=sharing" target="_blank">computer session handout</a>.</li>
+        -->
+          <li>
+            The <a href="http://code.org" target="_blank">code.org</a> website, an excellent resource for furthering programming skills. 
+            (<a href="javascript:div_toggle('div_coding_video')">show video</a>)
+            <div style="display: none;" id="div_coding_video">
+              <p><iframe width="560" height="315" src="https://www.youtube.com/embed/nKIu9yen5nc" title="YouTube video player" frameborder="0" allow="encrypted-media 'none'; gyroscope 'none'; picture-in-picture 'none'; web-share 'none'; geolocation 'none'" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin" allowfullscreen></iframe></p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Python materials</h3>
+
+        <ul>
+          <li>
+            You can download and install Python on your own computer for free.
+            <ul>
+              <li>
+                We suggest you do this by installing the Anaconda distribution of Python (version 3.9), which includes 
+                <a href="http://jupyter.org">Jupyter Notebook</a> and 
+                <a href="https://www.spyder-ide.org/">Spyder</a>.
+              </li>
+              <li>
+                To install Anaconda, click on 
+                <a href="https://www.anaconda.com/products/individual">this link</a> and scroll down to "Anaconda Installers", choosing the correct installer for your operating system.
+              </li>
+              <li>
+                Having installed Anaconda, we suggest you use Spyder to write and edit Python programs. On the worksheets, code to be typed into Spyder's IPython console, rather than being part of a program, is indicated by >>>. Programs (no >>>) are typed in the editor rather than in the console; you can open a new file by typing <code>Ctrl+N</code> or via the File menu. 
+              </li>
+              <li>
+                If you have any questions about installing Python or using Spyder, please ask these on the discussion board.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="http://www.greenteapress.com/thinkpython" target="_blank">Think Python</a>, an introduction to Python programming for beginners, available free online.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>LaTeX</h3>
+
+        <ul>
+          <li>
+            Download and install MiKTeX for Windows at home for free: <a href="http://miktex.org/download" target="_blank">MiKTeX.org</a>.
+          </li>
+          <li>
+            Download and install MacTeX for Macs at home for free: <a href="http://www.tug.org/mactex" target="_blank">tug.org/mactex</a>. 
+<!--
+            (<a href="javascript:div_toggle('div_mactex_download')">show instructions</a>)<br/>
+            <div style="display: none" id="div_mactex_download">
+            <p>We think this is the appropriate thing to download on Macs, and hopefully the instructions are straightforward, but as we don't own Macs, we are unable to test this. Please post any problems or advice on the discussion board as it will help others.</p>
+            </div>
+-->
+          </li>
+          <li>
+            Problems installing MiKTeX on Windows 7, 8 or 10? (<a href="javascript:div_toggle('div_windows_fix')">show tips</a>)<br/>
+            <div style="display: none" id="div_windows_fix">
+              <p>
+                If you've been getting an error after installing MiKTeX on a Windows 7, 8 or 10 machine, try the following.
+              </p>
+              <ol>
+                <li>Ensure TeXworks is closed.</li>
+                <li>Download <a href="http://www.xm1math.net/texmaker" target="_blank">TeXmaker</a>.</li>
+                <li>Open any .tex file that you know works (or make a very basic one).</li>
+                <li>Process it by pressing the blue arrow next to 'Quick build'.</li>
+                <li>Hopefully, the file will be processed OK. Change something in the document and re-run to make sure it's working.</li>
+                <li>You can either now use TeXmaker as your standard text editor, or try TeXworks again... you may find the latter now works too!</li>
+              </ol>
+              <p>If you continue to have problems, please post on the discussion board.</p>
+            </div>
+          </li>
+          <li>Download and install <a href="http://www.xm1math.net/texmaker/" target="_blank">TeXmaker</a> for free.</li>
+          <li>Download and install <a href="http://www.geogebra.org/" target="_blank">Geogebra</a> for free.</li>
+<!--
+          <li>Fix TeXmaker (or TeXworks) on the University's managed desktop. (<a href="javascript:div_toggle('div_texmaker_fix')">show instructions</a>)<br/>
+          <div style="display: none" id="div_texmaker_fix">
+          <p>
+            (NOTE! This advice worked in the 2017-18 academic year, and may no longer be appropriate. Treat with caution!) If you've been getting an error when trying to process a newly written document in Texmaker on the managed desktop, try the following.
+          </p>
+          <ol>
+            <li><p>Go to Options, Configure TeXmaker then in the box next to PdfLaTeX change the string</p>
+
+            <pre>"Q:/Miktex294813/miktex/bin/pdflatex.exe" -interaction=nonstopmode %.tex</pre>
+
+            <p>into</p>
+
+            <pre>"C://Program Files/MiKTeX 2.9/miktex/bin/x64/pdflatex.exe" -interaction=nonstopmode %.tex</pre>
+            </li>
+          </ol>
+
+          <p>If that doesn't work, or your issue is with TeXworks rather than TeXmaker, try the following instead.</p>
+          <ol>
+            <li>Ensure TeXworks/TeXmaker are closed.</li>
+            <li>Open the Software Centre.</li>
+            <li>Look in the Available Software for MiKTeX 2.9. If it is there, install it. If not, check to see if it appears in the Installed Software tab.</li>
+            <li>Open TeXworks/TeXmaker and try to produce a PDF again. Hopefully it will now work as it should.</li>
+          </ol>
+          <p>If that doesn't work, try the below.</p>
+          <ol>
+            <li>Ensure TeXworks/MiKTeX/TeXmaker are closed.</li>
+            <li>Open My Computer, and go to U:\ManW7\AppData(Roaming)\SoftGrid Client.</li>
+            <li>In there, delete the following two folders.
+              <ul>
+                <li>P8ZK_331.F8F-C52B2052-267A-4A23</li>
+                <li>UP25L7CD.AMQ-95E77B56-9497-4315</li>
+              </ul>
+            </li>
+            <li>Open TeXworks/TeXmaker and try to produce a PDF again.</li>
+          </ol>
+          <p>If you continue to have problems, please post on the discussion board.</p>
+        </div>
+        </li>
+-->
+        
+          <li>LaTeX templates:
+            <ul>
+              <li>a <a href="docs/template.tex">basic LaTeX preamble</a> for documents</li>
+              <!--
+              <li>
+                a <a href="docs/MAS116_beamer_template.tex">Beamer preamble</a> (used to create Dr Marsh's lecture slides)
+              </li>
+              -->
+            </ul>
+<!--
+          <li>
+            Problems with the \includegraphics command? (<a href="javascript:div_toggle('div_includegraphics')">show</a>)
+          </li>
+          <div style="display: none" id="div_includegraphics">
+            <p>
+              If you are struggling to get graphics to display with the \includegraphics command on the University's managed desktop PCs, try adding <pre><code>\graphicspath{{./}}</code></pre> to your preamble. This makes sure that the computer looks in the correct directory.
+            </p>
+          </div>
+          <li>
+            Get rid of extra space when including Geogebra PDFs. (<a href="javascript:div_toggle('div_geogebra_fix')">show instructions</a>)<br/>
+            <div style="display: none" id="div_geogebra_fix">
+              <p>When exporting PDF images from Geogebra, sometimes the software creates extra white space above and below the image. If you open the PDF file you will see that what's happened is the image has been put in the middle of an A4 page; including this PDF in a LaTeX document will unwanted blank space at the top and bottom.</p>
+              <p>The way I've fixed this issue is to specify a <em>bounding box</em> to crop the image. To do this, simply change the
+              <code>\includegraphics{...}</code> command to <code>\includegraphics[bb=0 180 575 625]{...}</code>
+              That's worked for me, but you may find you need to change the numbers. The first two correspond to $x$ and $y$-coordinates for the lower-left corner of the bounding box, and the second two correspond to uper-right corner.</p>
+            </div>
+          </li>
+-->
+          
+          
+          <li>The <a href="docs/higher_lower.py">Higher and Lower</a> game for use in Lab 6.</li>
+          
+          <li>Learn more about about LaTeX:
+            <ul>
+              <li><a href="http://mirror.ox.ac.uk/sites/ctan.org/info/lshort/english/lshort.pdf" target="_blank">The Not So Short Introduction to LaTeX</a></li>
+              <li><a href="http://en.wikibooks.org/wiki/LaTeX" target="_blank">the LaTeX Wikibook</a></li>
+              <!--
+              <li><a href="https://www.tug.org/teTeX/tetex-texmfdist/doc/latex/beamer/beameruserguide.pdf" target="_blank">the Beamer manual</a></li>
+              <li><a href="http://pgfplots.sourceforge.net/" target="_blank">the PGFplots website</a></li>
+              -->
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+      
+        <h3>HTML and web design</h3>
+
+        <ul>
+          <li>This page's <a href="css/course_pages.css">CSS file</a>.</li>
+          <!--
+          <li>
+            The w3schools page on <a href="http://www.w3schools.com/css/css_navbar.asp" target="_blank">navigation bars</a>, as recommended in the Week 9 lab.
+          </li>
+          <li>
+            The HTML Dog <a href="http://www.htmldog.com" target="_blank">HTML and CSS tutorials</a>, as recommended in the Week 9 lab.
+          </li>
+          <li>
+            The script for enabling <a href="http://www.mathjax.org">Mathjax</a> in HTML pages, to do things like $\Gamma(x)\equiv \lim_{x\to 0}\prod_{v=0}^{n-1}\frac{n!\;n^{x-1}}{x+v}$. (<a href="javascript:div_toggle('div_mathjax_code')">show code</a>)<br/>
+            <div style="display: none" id="div_mathjax_code">
+            <p>Copy and paste the code below into the head of your HTML document.</p>
+
+            <pre>
+                <code>
+&lt;script&nbsp;type=&quot;text/javascript&quot;&nbsp;id=&quot;MathJax-script&quot;&nbsp;async
+&nbsp;&nbsp;src=&quot;https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js&quot;
+&nbsp;&nbsp;integrity=&quot;sha384-AHAnt9ZhGeHIrydA1Kp1L7FN+2UosbF7RQg6C+9Is/a7kDpQ1684C2iH2VWil6r4&quot;
+&nbsp;&nbsp;crossorigin=&quot;anonymous&quot;&gt;
+&lt;/script&gt;
+&lt;script&gt;
+  window.MathJax&nbsp;=&nbsp;{
+  &nbsp;&nbsp;tex:&nbsp;{
+  &nbsp;&nbsp;&nbsp;&nbsp;inlineMath:&nbsp;[['$',&nbsp;'$'],&nbsp;['\\(',&nbsp;'\\)']]
+  &nbsp;&nbsp;}
+  };
+&lt;/script&gt;
+                </code>
+            </pre>
+            </div>
+          </li>
+
+          <li>
+            Read about the <a href="http://www.bleepingcomputer.com/tutorials/windows-command-prompt-introduction">Windows Command Prompt</a>.
+          </li>
+          <li>
+            Convert computer code to <a href="https://www.freeformatter.com/html-escape.html" target="_blank">safe HTML</a>.
+          </li>
+          <li>
+            The script for enabling <a href="https://github.com/googlearchive/code-prettify">Google Prettify</a> in HTML pages. (<a href="javascript:div_toggle('div_google_prettify')">show code</a>)<br/>
+            <div style="display: none" id="div_google_prettify">
+            <p>Copy and paste the below just above the <code>pre</code> and <code>code</code> tags.</p>
+            <pre>
+            <code>
+&lt;script&nbsp;
+  src=&quot;https://cdn.jsdelivr.net/npm/code-prettify@0.1.0/loader/run_prettify.min.js&quot; 
+  integrity=&quot;sha384-zmh8Dmggdxvu7C40fh1eFJPr2jrabJSODpgn/6OHI8psbd7rR1RPX8zfYr/HGZIr&quot;
+  crossorigin=&quot;anonymous&quot; &gt;
+&lt;/script&gt;
+</code>
+</pre>
+            <p>Change the <coe>pre</code> tag to</p>
+<pre>
+<code>
+&lt;pre&nbsp;class=&quot;prettyprint&nbsp;linenums&quot;&gt;
+</code>
+</pre>
+            <p>and click refresh.</p>
+            </div>
+          </li>
+        -->
+<!--
+          <li>
+            Learn about PHP: <a href="http://www.everythingphpmysql.com/" target="_blank">How to do Everything with PHP and MySQL</a>
+          </li>
+-->
+          
+        </ul>
+      </section>
+    
+    </section>
+  </main>
+
+  <footer>
+    <h2>Contact Details</h2>
+    <ul class="links">
+      <li><a href="http://www.shef.ac.uk/maths">The School of Mathematics and Statistics homepage</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
+
