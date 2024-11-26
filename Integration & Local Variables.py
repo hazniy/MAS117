@@ -27,6 +27,7 @@ print("int_0^1 x**2 dx is roughly {0:.6f}".format( #/i means integral for latex
 print("int_0^1 e**(x**2) dx is roughly {0:.6f}".format(
   midpoint_approximation(g, 1000, 0, 1)))
 
+#exercise 9.1
 def trapezoidal_approximation(f, N, a, b): 
     """
     Calculate an approximation to int_a^b f(x) 
@@ -59,6 +60,15 @@ def test_function(x):
      return x
 i = 2 
 print("Before the function is called: i =", i)
-test_function(i)
+i = test_function(i)
 print("After the function is called: i =", i)
+
+#exercise 9.3 recursive function 
+def function(n): 
+   """Calculate some mysterious functionnrecursively."""
+   if n == 0:
+      return 1
+   return n*functiom(n-1) 
+
+print(function(5))
 
