@@ -1,1 +1,163 @@
+import math
 
+def midpoint_approximation(f, N, a, b):
+    """
+    Calculate an approximation to int_a^b f(x)
+    with N midpoint-rectangles.
+    """
+    approximation = 0
+    for i in range(N):
+        approximation += (b - a) / N * f(a + (i + 1/2) * (b - a) / N)
+    return approximation
+
+def trapezium_approximation(f, N, a, b):
+    """
+    Calculate an approximation to int_a^b f(x)
+    with N trapezium segments.
+    """
+    approximation = (f(a) + f(b)) / 2
+    for i in range(1, N):
+        approximation += f(a + i * (b - a) / N)
+    approximation *= (b - a) / N
+    return approximation
+
+def simpsons_rule(f, N, a, b):
+    """
+    Calculate an approximation to int_a^b f(x)
+    using Simpson's Rule with N intervals.
+    """
+    approximation = 0
+    for i in range(N):
+        x_i = a + i * (b - a) / N
+        x_i_next = a + (i + 1) * (b - a) / N
+        x_star = (x_i + x_i_next) / 2
+        approximation += (b - a) / (6 * N) * (f(x_i) + 4 * f(x_star) + f(x_i_next))
+    return approximation
+
+# Function definitions for the integrals
+def f1(x):
+    """Calculate x squared."""
+    return x**2
+
+def f2(x):
+    """Calculate x cubed."""
+    return x**3
+
+def f3(x):
+    """Calculate x to the fourth power."""
+    return x**4
+
+# Comparison for the three integrals
+N = 1
+a, b = 0, 1
+
+# Integral 1: ∫ 0 to 1 x^2 dx
+result_mid_1 = midpoint_approximation(f1, N, a, b)
+result_trap_1 = trapezium_approximation(f1, N, a, b)
+result_simp_1 = simpsons_rule(f1, N, a, b)
+
+# Integral 2: ∫ 0 to 1 x^3 dx
+result_mid_2 = midpoint_approximation(f2, N, a, b)
+result_trap_2 = trapezium_approximation(f2, N, a, b)
+result_simp_2 = simpsons_rule(f2, N, a, b)
+
+# Integral 3: ∫ 0 to 1 x^4 dx
+result_mid_3 = midpoint_approximation(f3, N, a, b)
+result_trap_3 = trapezium_approximation(f3, N, a, b)
+result_simp_3 = simpsons_rule(f3, N, a, b)
+
+# Printing the results with comparison to exact values
+print(f"Integral 1: ∫ 0 to 1 x^2 dx")
+print(f"Midpoint: {result_mid_1:.10f}")
+print(f"Trapezium: {result_trap_1:.10f}")
+print(f"Simpson's Rule: {result_simp_1:.10f}\n")
+
+print(f"Integral 2: ∫ 0 to 1 x^3 dx")
+print(f"Midpoint: {result_mid_2:.10f}")
+print(f"Trapezium: {result_trap_2:.10f}")
+print(f"Simpson's Rule: {result_simp_2:.10f}\n")
+
+print(f"Integral 3: ∫ 0 to 1 x^4 dx")
+print(f"Midpoint: {result_mid_3:.10f}")
+print(f"Trapezium: {result_trap_3:.10f}")
+print(f"Simpson's Rule: {result_simp_3:.10f}\n")
+
+#Simpsons rule : combines both the function values at the endpoints and at the midpoint between adjacent points, using a weigted average to provide a more accurate estimate. 
+#Midpoint approximation L calculates the area under the curve using recatngles centered at the midpoint of each subinterval. 
+#trapezium approximation: uses trapezoids to approximate the area under the curve, summing the areas of the trapezoids formed between adjacent points.
+
+#sec attempt 
+import numpy as np
+
+# Simpson's Rule
+def simpsons_rule(f, N, a, b):
+    h = (b - a) / N
+    result = 0
+    for i in range(N):
+        x_i = a + i * h
+        x_next = x_i + h
+        x_star = (x_i + x_next) / 2  # Midpoint
+        result += f(x_i) + 4 * f(x_star) + f(x_next)
+    return (b - a) / (6 * N) * result
+
+# Midpoint Rule
+def midpoint_rule(f, N, a, b):
+    h = (b - a) / N
+    result = 0
+    for i in range(N):
+        x_i = a + i * h
+        x_star = (x_i + (x_i + h)) / 2  # Midpoint
+        result += f(x_star)
+    return (b - a) / N * result
+
+# Trapezium Rule
+def trapezium_rule(f, N, a, b):
+    h = (b - a) / N
+    result = 0.5 * (f(a) + f(b))
+    for i in range(1, N):
+        x_i = a + i * h
+        result += f(x_i)
+    return (b - a) / N * result
+
+# Define the test functions
+def f1(x):
+    return x**2
+
+def f2(x):
+    return x**3
+
+def f3(x):
+    return x**4
+
+# Compare the methods for N = 1
+N = 1
+a = 0
+b = 1
+
+# Compute the integrals using all three methods
+integral_simpsons_f1 = simpsons_rule(f1, N, a, b)
+integral_midpoint_f1 = midpoint_rule(f1, N, a, b)
+integral_trapezium_f1 = trapezium_rule(f1, N, a, b)
+
+integral_simpsons_f2 = simpsons_rule(f2, N, a, b)
+integral_midpoint_f2 = midpoint_rule(f2, N, a, b)
+integral_trapezium_f2 = trapezium_rule(f2, N, a, b)
+
+integral_simpsons_f3 = simpsons_rule(f3, N, a, b)
+integral_midpoint_f3 = midpoint_rule(f3, N, a, b)
+integral_trapezium_f3 = trapezium_rule(f3, N, a, b)
+
+# Print results
+print(f"Simpson's rule for f(x) = x^2: {integral_simpsons_f1:.10f}")
+print(f"Midpoint rule for f(x) = x^2: {integral_midpoint_f1:.10f}")
+print(f"Trapezium rule for f(x) = x^2: {integral_trapezium_f1:.10f}")
+print()
+
+print(f"Simpson's rule for f(x) = x^3: {integral_simpsons_f2:.10f}")
+print(f"Midpoint rule for f(x) = x^3: {integral_midpoint_f2:.10f}")
+print(f"Trapezium rule for f(x) = x^3: {integral_trapezium_f2:.10f}")
+print()
+
+print(f"Simpson's rule for f(x) = x^4: {integral_simpsons_f3:.10f}")
+print(f"Midpoint rule for f(x) = x^4: {integral_midpoint_f3:.10f}")
+print(f"Trapezium rule for f(x) = x^4: {integral_trapezium_f3:.10f}")
