@@ -55,14 +55,14 @@ a, b = 0, 1
 print("(i) ∫ 0 to 1 x^2 dx") #f "" these strings are used for formatting
 print("Midpoint Approximation: {0:.6f}".format(midpoint_approximation(f, N, a, b)))
 print("Trapezium Approximation: {0:.6f}".format(trapezium_approximation(f, N, a, b)))
-print("Simpson's Rule: {0:.6f}\n".format(simpsons_rule(f, N, a, b)))
+print("Simpson's Rule: {0:.10f}\n".format(simpsons_rule(f, N, a, b)))
 
 print("(ii) ∫ 0 to 1 x^3 dx")
 print("Midpoint Approximation: {0:.6f}".format(midpoint_approximation(g, N, a, b)))
 print("Trapezium Approximation: {0:.6f}".format(trapezium_approximation(g, N, a, b)))
-print("Simpson's Rule: {0:.6f}\n".format(simpsons_rule(g, N, a, b)))
+print("Simpson's Rule: {0:.10f}\n".format(simpsons_rule(g, N, a, b)))
 
 print("(iii) ∫ 0 to 1 x^4 dx")
 print("Midpoint Approximation: {0:.6f}".format(midpoint_approximation(h, N, a, b)))
 print("Trapezium Approximation: {0:.6f}".format(trapezium_approximation(h, N, a, b)))
-print("Simpson's Rule: {0:.6f}\n".format(simpsons_rule(h, N, a, b)))
+print("Simpson's Rule: {0:.10f}\n".format(simpsons_rule(h, N, a, b)))
