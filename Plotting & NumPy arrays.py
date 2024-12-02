@@ -19,3 +19,109 @@ plt.title("A very basic plot")
 plt.xlabel("x")
 plt.ylabel("y")
 plt.show()
+
+#plot sin(x) for x from 0 to 2pi, using 8 intervals 
+import math 
+import matplotlib.pyplot as plt
+
+x_min = 0
+x_max = 2*math.pi 
+NO_OF_INTERVALS = 100 #more num intervals, smoother the line of the graph
+
+x_values, y_values = [], []
+
+for i in range(NO_OF_INTERVALS + 1): 
+    x = x_min + i * (x_max - x_min)/ NO_OF_INTERVALS
+    x_values.append(x)
+    y_values.append(math.sin(x))
+
+#print("\nx:", x_values, "\n\ny:", y_values, "\n") #to see value of x and y 
+
+plt.plot(x_values, y_values, color='red')
+#plt.gca().set_aspect("equal") #equal = same scale !important if want squares and circles to look correct
+plt.title("sin(x)")
+plt.xlabel("x")
+plt.ylabel("sin(x)")
+plt.show()
+
+#exercise 10.1
+#plot cos(x) for x from 0 to 2pi, using 8 intervals 
+import math 
+import matplotlib.pyplot as plt
+
+x_min = 0
+x_max = 2*math.pi 
+NO_OF_INTERVALS = 100 #more num intervals, smoother the line of the graph
+
+x_values, y_values = [], []
+
+for i in range(NO_OF_INTERVALS + 1): 
+    x = x_min + i * (x_max - x_min)/ NO_OF_INTERVALS
+    x_values.append(x)
+    y_values.append(math.cos(x))
+
+#print("\nx:", x_values, "\n\ny:", y_values, "\n") #to see value of x and y 
+
+plt.plot(x_values, y_values, color='pink')
+
+plt.title("Cos(x)")
+plt.xlabel("x")
+plt.ylabel("cos(x)")
+plt.show()
+
+#combine the sin(x) and cos(x) in one graph
+#plot sin(x) for x from 0 to 2pi, using 8 intervals 
+import math 
+import matplotlib.pyplot as plt
+
+x_min = 0
+x_max = 2*math.pi 
+NO_OF_INTERVALS = 100 #more num intervals, smoother the line of the graph
+
+x_values, y_values, y2_values = [], [], []
+
+for i in range(NO_OF_INTERVALS + 1): 
+    x = x_min + i * (x_max - x_min)/ NO_OF_INTERVALS
+    x_values.append(x)
+    y_values.append(math.sin(x))
+    y2_values.append(math.cos(x))
+
+#print("\nx:", x_values, "\n\ny:", y_values, "\n") #to see value of x and y 
+
+plt.plot(x_values, y_values, color='red')
+plt.plot(x_values, y2_values, color='pink')
+#plt.gca().set_aspect("equal") #equal = same scale !important if want squares and circles to look correct
+plt.show()
+###############################################NUMPY###################################################
+import numpy as np #numpy array more like a vector than a list
+array_1 = np.array([1.1, 2.2, 3.3]) #theres no comma here if using np
+print(array_1)
+type(array_1)
+list_1 = [1.1, 2.2, 3.3]
+print(list_1) 
+
+print(list_1 + list_1) #[1.1, 2.2, 3.3, 1.1, 2.2, 3.3]
+print(list_1 * 5) #[1.1, 2.2, 3.3, 1.1, 2.2, 3.3, 1.1, 2.2, 3.3, 1.1, 2.2, 3.3, 1.1, 2.2, 3.3]
+
+#pointwise
+print(array_1 + array_1) #[2.2 4.4 6.6] its added!
+print(array_1 * 5) #[ 5.5 11.  16.5] 
+
+print(np.exp(array_1), "\n", np.log(array_1)) 
+#np.exp(array_1) for exponential
+#np.log(array_1) for logarithm
+
+#np.linspace(x_min, x_max, N) #create a NumPy array of N equally spaced points from x_min to x_max, which includes both endpoints.
+
+print(np.linspace(0, 1, 11))
+print(np.linspace(1, 3, 5))
+
+import numpy as np 
+import matplotlib.pyplot as plt 
+
+x_values = np.linspace(0, 2*np.pi, 100)
+plt.plot(x_values, np.sin(x_values), color='pink')
+plt.plot(x_values, np.cos(x_values), color='red') #exercise 10.2 plot for cos(x)
+plt.show()
+
+#http://www.labri.fr/perso/nrougier/teaching/matplotlib/ #github of matplotlib
