@@ -26,7 +26,9 @@
 
         <main>
             <section>
+		<div class="law">
                 <h2>Newton's Laws of Motion</h2>
+		</div>
 				<small>
 				The following is copied more-or-less verbatim from a previous version of the <a href=
                 "https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion">'Newton's Laws of Motion'</a> for the purposes of playing around with MathJax.
@@ -39,7 +41,11 @@
 				<li>First law.  If an object experiences no net force, then its velocity is constant: the object is either at rest (if its velocity is zero), or it moves in a straight line with constant speed (if its velocity is nonzero).</li>
                 </p>
                 <p>
-				<li>Second law.  For a body with constant mass, the acceleration a of the body is parallel and directly proportional to the net force F acting on the body, is in the direction of the net force, and is inversely proportional to the mass m of the body, i.e., $F=ma$. In general, the force is directly proportional to the rate of change of momentum of the body, i.e., $F=(d/dt)(mv)$.</li>
+				<li>Second law.  For a body with constant mass, the acceleration a of the body is parallel and directly proportional to the net force F acting on the body, is in the direction of the net force, and is inversely proportional to the mass m of the body, i.e., $F=ma$. In general, the force is directly proportional to the rate of change of momentum of the body, i.e., 
+\[
+F=\frac{d}{dt}mv.
+\]
+</li>
                 </p>
                 <p>
 				<li>Third law. When a first body exerts a force F1 on a second body, the second body simultaneously exerts a force $F2=-F1$ on the first body. This means that $F1$ and $F2$ are equal in magnitude and opposite in direction.</li>
@@ -50,7 +56,23 @@
                 </p>
             </section>
 			<section>
+				<div class="law">
 				<h2>Newton's Laws of Gravitation</h2>
+				</div>
+				<h3>A Python proogram</h3>
+				<script 
+  src="https://cdn.jsdelivr.net/npm/code-prettify@0.1.0/loader/run_prettify.min.js" 
+  integrity="sha384-zmh8Dmggdxvu7C40fh1eFJPr2jrabJSODpgn/6OHI8psbd7rR1RPX8zfYr/HGZIr"
+  crossorigin="anonymous" >
+				</script>
+					<p>
+						Here is a Python program to plot the gravitational force between two point masses.
+					</p>
+					<pre class="prettyprint linenums">
+						<code>
+<iframe src="https://trinket.io/embed/python/5149c02e3e2c" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+						</code>
+					</pre>
 				<small>
 				What follows is from a previous version of the <a href=
                 "https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation">'Newton's Laws of Universal Gravitation'</a>.
@@ -59,7 +81,10 @@
 				Newton's law of universal gravitation states that every point mass in the universe attracts every other point mass with a force that is directly proportional to the product of their masses and inversely proportional to the square of the distance between them. (Separately it was shown that large spherically symmetrical masses attract and are attracted as if all their mass were concentrated at their centers.) This is a general physical law derived from empirical observations by what Newton called induction. It is a part of classical mechanics and was formulated in Newton's work Philosophiae Naturalis Principia Mathematica ("the Principia"), first published on 5 July 1687. (When Newton's book was presented in 1686 to the Royal Society, Robert Hooke made a claim that Newton had obtained the inverse square law from his; see the History section below.) In modern language, the law states the following.
                 </p>
                 <p>
-				Every point mass attracts every single other point mass by a force pointing along the line intersecting both points. The force is proportional to the product of the two masses and inversely proportional to the square of the distance between them: $F=(G m1 m2)/r^2$,
+				Every point mass attracts every single other point mass by a force pointing along the line intersecting both points. The force is proportional to the product of the two masses and inversely proportional to the square of the distance between them: 
+\[
+F=\frac{G.m1.m2}{r^2},
+\]
 				where 
 				$F$ is the magnitude of the force between the masses,
 				$G$ is the gravitational constant,
@@ -68,6 +93,25 @@
 				$r$ is the distance between the centers of the masses.
                 </p>
             </section>
+	    <section>
+		<h4>Appendix</h4>
+		<p>
+			The table below shows the SI units for the quantities
+involved in the above discussion
+		</p>
+		<table>
+			<thead>
+				<tr>
+					<th>Symbol
+					<th>Quantity
+					<th>SI unit
+			<tbody>
+				<tr>
+					<td>F
+					<td>Force
+					<td>Newton(N)
+
+	    </section>
         </main>
     </body>
 </html>
