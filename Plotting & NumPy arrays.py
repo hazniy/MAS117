@@ -125,3 +125,38 @@ plt.plot(x_values, np.cos(x_values), color='red') #exercise 10.2 plot for cos(x)
 plt.show()
 
 #http://www.labri.fr/perso/nrougier/teaching/matplotlib/ #github of matplotlib
+#homework 
+import numpy as np
+import matplotlib.pyplot as plt
+
+x_exp = np.linspace(-4, 2, 100)  # Range for exponential function
+x_log = np.linspace(0.01, 7.4, 100)  # Range for logarithmic function
+#why start at 0.01 instead 0, cuz ln(0) is maths error
+#why stop at 7.5, e^2 = 7.39 so reasonable to stop at 7.4
+
+x_line = np.linspace(-4, 7.4, 100)
+plt.plot(x_line, x_line, linestyle='--')
+
+plt.plot(x_exp, np.exp(x_exp), color='red')
+plt.plot(x_log,  np.log(x_log), color='pink')
+
+# Add title, labels, and legend
+plt.title('Exponential and Logarithmic Functions')
+plt.xlabel('x')
+plt.ylabel('e^x // ln(x)')
+plt.show()
+
+#another way if dont know about the log range 
+
+# Calculate the exponential values
+y_exp = np.exp(x_exp)
+
+# Use the y values of the exponential function as the x values for the logarithmic function
+x_log = y_exp
+y_log = np.log(x_log)
+
+# Plot the exponential function
+plt.plot(x_exp, y_exp, color='blue', label='y = e^x')
+
+# Plot the logarithmic function
+plt.plot(x_log, y_log, color='green', label='y = ln(x)')
