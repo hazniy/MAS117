@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"
+  integrity="sha384-AHAnt9ZhGeHIrydA1Kp1L7FN+2UosbF7RQg6C+9Is/a7kDpQ1684C2iH2VWil6r4"
+  crossorigin="anonymous">
+</script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+<head>
+    <title>Semester 1 Mini-project</title>
+<link rel="stylesheet" type="text/css" href="miniproject.css">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+</head>
+
+<body>
+    <header>
+        <h1>Semester 1 Mini-project</h1>
+		<h2 class="subtitle">
+			240145846
+		</h2>
+    </header>
+
+<main>
+    <section>
+    <h2>Introduction</h2>
+		<p>
+			This project simulates a random walk by Annie the ant on a pentagon. Annie starts at vertex 0 and takes seven random steps, moving either clockwise or counterclockwise with equal probability.
+        </p>
+		
+	<h2>Objectives</h2>
+            <p>
+				The goal is to simulate Annie's random walk with:
+            </p>
+            <p>
+            <ol>
+			<li>Fixed values for vertices (5) and steps (7).</li>
+            </p>
+            <p>
+			<li> An extended version where the user specifies the number of vertices and steps.</li>
+            </p>
+            </ol>
+    </section>
+	<section>
+		<h2>Python Code: Fixed Values</h2>
+		<h3>A Python program</h3>
+			<script
+			src="https://trinket.io/embed/python/5149c02e3e2c" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
+			</script>
+			<p>
+				Here, the program simulates 128 random walks and shows the frequency of each final vertex. The fixed values are 5 vertices and 7 steps.
+			</p>
+		<pre class="prettyprint linenums">
+				<code>
+<iframe src="https://trinket.io/embed/python/5149c02e3e2c" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+				</code>
+		</pre>
+    </section>
+	<section>
+		<h2>Extended Project: Adding User Prompts for Vertices and Steps</h2>
+		<p>
+			The project has been extended to allow the user to specify both the number of vertices and the number of steps for the random walk. The updated code is shown below:
+		</p>
+		<script
+		src="https://trinket.io/embed/python/e731b25d156d" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
+		</script>
+		<pre class="prettyprint linenums">
+			<code>
+<iframe src="https://trinket.io/embed/python/e731b25d156d" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+			</code>
+		</pre>
+	</section>
+	<section>
+		<h2>Effects of the Number of Steps and Vertices</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Number of Steps
+					<th>Number of Vertices
+			<tbody>
+				<tr>
+					<td>More steps increase the likelihood of reaching different vertices.
+					<td>Increasing the vertices spreads the distribution.
+			<tbody>
+				<tr>
+					<td>Example:
+						<ul>
+							<li>With fewer steps (e.g., 3 steps), results are concentrated near the starting point.</li>
+							<li>With more steps (e.g., 10 steps), resultrs are more spread out.</li>
+						</ul>
+					<td>Example:
+						<ul>
+							<li>With fewer vertices (e.g., 3 vertices), the final positions are concentrated.</li>
+							<li>With more vertices (e.g., 10 vertices), the final positions are more varied.</li>
+						</ul>
+		</table>
+		<p>
+			The number of steps and vertices both play a big role in shaping where Annie ends up. With more vertices, her final positions are spread out across a larger range. Similarly, taking more steps increases the chances of her exploring more of the vertices along the way.
+		</p>
+	</section>
+        </main>
+    </body>
+</html>
+
+
+            
