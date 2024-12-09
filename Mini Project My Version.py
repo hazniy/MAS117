@@ -105,7 +105,7 @@ def randomwalk(vertices, steps):
     for i in range(steps):
         move = random.choice([-1, 1])
         position = position + move
-    position = position % vertices
+    position = position % vertices #if vertices = 5: positions -1 and 5 both map to vertex 4. Always Positive
     return position
 
 #Prompt the user for the number of steps
