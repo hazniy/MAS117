@@ -129,34 +129,45 @@ plt.show()
 import numpy as np
 import matplotlib.pyplot as plt
 
-x_exp = np.linspace(-4, 2, 100)  # Range for exponential function
-x_log = np.linspace(0.01, 7.4, 100)  # Range for logarithmic function
-#why start at 0.01 instead 0, cuz ln(0) is maths error
+x_e = np.linspace(-4, 2, 100)  # Range for exponential function
+x_ln = np.linspace(0.01, 7.4, 100)  # Range for logarithmic function
 #why stop at 7.5, e^2 = 7.39 so reasonable to stop at 7.4
 
-x_line = np.linspace(-4, 7.4, 100)
-plt.plot(x_line, x_line, linestyle='--')
+x_straight = np.linspace(-4, 7.4, 100)
+plt.plot(x_straight, x_straight, linestyle='None')
 
-plt.plot(x_exp, np.exp(x_exp), color='red')
-plt.plot(x_log,  np.log(x_log), color='pink')
+plt.plot(x_exp, np.exp(x_e), color='red')
+plt.plot(x_log,  np.log(x_ln), color='pink')
 
-# Add title, labels, and legend
+# Add title
 plt.title('Exponential and Logarithmic Functions')
 plt.xlabel('x')
 plt.ylabel('e^x // ln(x)')
 plt.show()
 
 #another way if dont know about the log range 
+import numpy as np
+import matplotlib.pyplot as plt
 
-# Calculate the exponential values
-y_exp = np.exp(x_exp)
+#rules of log and e
+#y = e^x --> x = ln(y)
 
-# Use the y values of the exponential function as the x values for the logarithmic function
-x_log = y_exp
-y_log = np.log(x_log)
+#x and y values of exponential
+x_e = np.linspace(-4, 2, 100)
+y_e = np.exp(x_e)
 
-# Plot the exponential function
-plt.plot(x_exp, y_exp, color='blue', label='y = e^x')
+#x and y values of log
+x_ln = y_e
+y_ln = np.log(x_ln)
 
-# Plot the logarithmic function
-plt.plot(x_log, y_log, color='green', label='y = ln(x)')
+#a line
+x_straight = np.linspace(-4, 7.4, 100)
+plt.plot(x_straight, x_straight, linestyle='-')
+
+plt.plot(x_e, y_e, color='red')
+plt.plot(x_ln, y_ln, color='pink')
+
+plt.title('Exponential and Logarithmic Functions')
+plt.xlabel('x')
+plt.ylabel('e^x // ln(x)')
+plt.show()
