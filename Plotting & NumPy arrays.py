@@ -169,5 +169,5 @@ plt.plot(x_ln, y_ln, color='pink')
 
 plt.title('Exponential and Logarithmic Functions')
 plt.xlabel('x')
-plt.ylabel('e^x // ln(x)')
+plt.ylabel('$e^x$ $\ln(x)$')
 plt.show()
