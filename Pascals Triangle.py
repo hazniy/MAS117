@@ -50,6 +50,21 @@ print(nsplit) #mmg dlm list []
 i.append(nsplit) 
 print(i) #dia dlm [[]]
 
+#Change a space separated list of numbers to a list of floats
+def string_to_vector_1(string):
+    """
+    Change a space separated list of
+    numbers to a list of floats
+    """
+    string_list = string.split()
+    float_list = []
+    for s in string_list:
+        float_list.append(float(s))
+    return float_list
+
+string = "1234"
+print(string_to_vector_1(string))
+
 #homework
 #recap
 #end = "" prevents moving to a new line, so next print statement output on the same line
