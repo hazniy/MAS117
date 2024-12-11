@@ -3,6 +3,7 @@ function =  "sin"
 derivative = "cos"
 template = "The derivative of {0} is {1}."
 print(template.format(function,derivative))
+#The derivative of sin is cos.
 template = "An integral of {1} is {0}."
 print(template.format(function, derivative))
 
@@ -13,9 +14,9 @@ print("={0:6}=".format("parrot")) #if the specified wisth is less than the str l
 print("={0:5}=".format("parrot"))
 
 import math 
-print("Approximately, pi is {0}.".format(math.pi))
-print("Approximately, pi is {0:.5f}.".format(math.pi))
-print("Approximately, pi is {0:.1f}.".format(math.pi))
+print("Approximately, pi is {0}.".format(math.pi)) #3.141592653589793.
+print("Approximately, pi is {0:.5f}.".format(math.pi)) #3.14159.
+print("Approximately, pi is {0:.1f}.".format(math.pi)) #3.1.
 
 #exercise 8.1 use format() with math.pi and math.e
 #Output: Roughly, pi is 3.14 and e is 2.72.
@@ -127,6 +128,21 @@ limit_table(f_1, 1, 10)
 
 #mutability of sets 
 menu = ["spam", "egg", "beans"]
-print(menu[0])
+print(menu[0]) #spam
+menu[0] = "sausage"
+print(menu) #['sausage', 'egg', 'beans']
+
+#menu and food but only change food 
+menu = ["spam", "egg", "beans"]
+food = list(menu) #put the list()
+print(food, menu)
+food[2] = "jam"
+print(food, menu)
+
+#anonymous function using lambda
+limit_table(lambda x : (x**4 - x**3 + x**2 -1)/(x-1), 1, 10)
+limit_table(lambda x : math.sin(7*x)/x, 0, 10)
+
+
 
 
