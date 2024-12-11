@@ -52,6 +52,10 @@ if number == 0 :
     print("it is False that your number is non-zero")
 else:
     print("it is True that your number is non-zero")
+
+# other way To decide if a number is non-zero
+number = int(input("Enter an integer: "))
+print("It is", number != 0, "that your number is non-zero")
     
 #exercise 2.5
 while 1 > 2:
@@ -82,7 +86,6 @@ num2 = int(input("enter the second number: "))
 while num1 != num2:
     if num1 > num2:
         num1 = num1 - num2
-
     else:
         num2 = num2 - num1
 print("the greatest common divisor for these 2 numbers is", num1)
@@ -102,8 +105,6 @@ print("the greatest common divisor for these 2 numbers is", num1)
 
 #4 how to find a pi using 10 iterations 
 import math
-
-
 def gauss_legendre_pi(precision=10):
     # Step 1: Initialize variables
     a_n = 1.0
