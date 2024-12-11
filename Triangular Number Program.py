@@ -25,3 +25,13 @@ else:
         i = i + 1
     print(reciprocal) 
 
+
+n = int(input("Enter the number you want "
+"to calculate the triangular of: "))
+
+triangular = 1
+i = 1
+while i <= n:
+    triangular = triangular(triangular+1)/2
+    i = i + 1
+print(n, "! = ", triangular)
