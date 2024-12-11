@@ -52,3 +52,17 @@ print(HORIZONTAL_LINE)
 
 #exercise 6.2 plot graph sin(x)
 #NO_OF_INTERVALS = 16 ===> NO_OF_INTERVALS = 40
+import math
+NO_OF_INTERVALS = 40
+for i in range(NO_OF_INTERVALS + 1):
+    x = 2 * math.pi * i / NO_OF_INTERVALS
+    print(" " * int(30 * (1 + math.sin(x))) + "*")
+
+#random shit
+import math
+NO_OF_INTERVALS = 40
+for i in range(NO_OF_INTERVALS + 1):
+    x = 4 * (i / NO_OF_INTERVALS - 1/2)
+    y = math.exp(-x**2)
+    print("{0:f}".format(x), "*"*int(40*(y)), sep="\t")
+
