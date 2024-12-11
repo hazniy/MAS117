@@ -1,3 +1,19 @@
+#exercise 1.4 triangular program 
+n = int(input("Enter the number you want "
+"to calculate the triangular of: "))
+i = 1
+while i <= n:
+    triangular = i*(i+1)/2
+    i = i + 1
+print(triangular)
+
+#simpler way 
+n = int(input("Enter the number you want "
+"to calculate the triangular of: "))
+
+triangular = n*(n+1)/2
+print(triangular)
+
 #first homework MAS 117
 #3
 x = 13
@@ -24,14 +40,3 @@ else:
         reciprocal = reciprocal + formula
         i = i + 1
     print(reciprocal) 
-
-
-n = int(input("Enter the number you want "
-"to calculate the triangular of: "))
-
-triangular = 1
-i = 1
-while i <= n:
-    triangular = triangular(triangular+1)/2
-    i = i + 1
-print(n, "! = ", triangular)
