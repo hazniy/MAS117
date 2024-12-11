@@ -1,3 +1,31 @@
+#A program to see if a number is odd or even
+number = int(input("enter an integer: "))
+if number % 2 == 1:
+    print("That is odd...")
+else:
+    print("thats even")
+print("thank you")
+
+#indexing 
+my_name = "Hazni"
+index = 0
+while index < len(my_name):
+    print(index, my_name[index])
+    index = index + 1
+
+#exercise 3.3
+# To find the middle of a string
+string = input("Enter a string: ")
+if len(string) % 2 == 1:
+    print("The middle of the string is ",
+            string[len(string) // 2], ".", sep="")
+else:
+    middle = len(string) // 2
+    print("The middle of the string is ",
+            string[middle - 1], string[middle], ".", sep="")
+#"hazni" : z
+#"hazniy" : zn
+
 #recap how to print 1 letter only : 
 str1 = "hazni"
 print (str1[1]) #it'll print 'a'
