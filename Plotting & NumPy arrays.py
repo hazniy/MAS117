@@ -96,7 +96,7 @@ plt.show()
 import numpy as np #numpy array more like a vector than a list
 array_1 = np.array([1.1, 2.2, 3.3]) #theres no comma here if using np
 print(array_1)
-type(array_1)
+type(array_1) #'numpy.ndarray'
 list_1 = [1.1, 2.2, 3.3]
 print(list_1) 
 
