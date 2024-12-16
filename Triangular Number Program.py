@@ -1,3 +1,12 @@
+#factorial 
+n = int(input("enter the num yoh want:") 
+factorial = 1 
+i = 1
+while i <= n: 
+    factorial = factorial * i 
+    i = i + 1
+print(n, "! =", factorial) 
+
 #exercise 1.4 triangular program 
 n = int(input("Enter the number you want "
 "to calculate the triangular of: "))
