@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"
+  integrity="sha384-AHAnt9ZhGeHIrydA1Kp1L7FN+2UosbF7RQg6C+9Is/a7kDpQ1684C2iH2VWil6r4"
+  crossorigin="anonymous">
+</script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+<head>
+    <title>knights-tour-chess</title>
+<link rel="stylesheet" type="text/css" href="groupproject.css">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+</head>
+
+<body>
+    <header>
+        <h1>Knight's Tour</h1>
+    </header>
+
+<main>
+    <section>
+		<h2>Definitions</h2>
+        <p>One of the most famous mathematical problems 
+            debated concerning whether any such sequence 
+            of moves is plausible is the Knight's Tour problem. 
+            In a sense, this problem provides an immediate application 
+            of the Knight's Tour, where the knight must step in turn 
+            on successive knight moves without stepping onto the same 
+            square again. A complete tour means stepping on all squares 
+            once, whereas a closed complete tour would mean ending on a 
+            square sufficiently near to this configuration for the 
+            knight to return to the starting square. 
+        </p>
+	</section>
+    <section>
+    <h2>The Base</h2>
+    <h2>Chessboard and Knight</h2>
+		<p>
+            This program describes the code to implement a chessboard with a knight.
+        </p>
+    
+	<h3>A Python program</h3>
+		<script
+	    src="https://trinket.io/embed/python/2fb0eb861319" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
+		</script>
+		<pre class="prettyprint linenums">
+				<code>
+<iframe src="https://trinket.io/embed/python/2fb0eb861319" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+				</code>
+		</pre>
+        <div style="text-align: center;">
+        <figure class="image">
+        <img src="knight move randomly .png" alt="Figure 1 knight " width="300" height="300">
+        <figcaption>Figure 1 knight move randomly</figcaption>
+        </figure>
+        </div>
+    <h4>The Logic behind the code</h4>
+        <p> 
+            We have two functions, one for the chessboard 
+            and another for the knight. The chessboard function 
+            is very important in two respects: displaying 
+            the outlines of the chessboard and displaying the 
+            black and white squares of a standard chessboard. 
+            The chessboard behaves like an $8x8$ grid. Random numbers 
+            were used to test some positions for the knight, and it 
+            has been found reasonable to position it by taking row 
+            value minus $7.5$. 
+        </p>
+    <h2>Knight Moves Randomly</h2>
+		<p>
+			So by now, in this program, we randomly motion the piece whenever the user clicks.
+		</p>
+		<script
+        src="https://trinket.io/embed/python/795d08fb91cb" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
+		</script>
+        <pre class="prettyprint linenums">
+			<code>
+<iframe src="https://trinket.io/embed/python/795d08fb91cb" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+			</code>
+		</pre>
+        <h4>The Logic behind the code</h4>
+        <p>
+            Another function called 'user_click' has been created, 
+            and it is called by the program to provide response 
+            to the user click events. This is where we create our 
+            two variable values, row and column (col). When these 
+            variables are assigned hearing values, the knight position
+            will be updated. This is the beauty of get_current_figure() 
+            (plt.gcf()). After that, we made plt.gcf().canvas.mpl_connect 
+            listen for user interaction events like mouse clicks.
+        </p>
+	</section>
+    <section>
+        <h2>Knight's Tour</h2>
+        <h3>A Python program</h3>
+        <script
+        src="https://trinket.io/embed/python/1b2fc7bf2b10" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
+		</script>
+        <pre class="prettyprint linenums">
+			<code>
+<iframe src="https://trinket.io/embed/python/1b2fc7bf2b10" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </code>
+        </pre>
+        <div style="text-align: center;">
+            <figure class="image">
+            <img src="knight's tour 1.png" alt="Figure 2 Knight's tour" width="300" height="300">
+            <figcaption>Figure 2 Knight's Tour Starter</figcaption>
+            </figure>
+            <figure class="image">
+            <img src="knight's tour 2.png" alt="Figure 3 Knight's tour move" width="300" height="300">
+            <figcaption>Figure 3 Example of moving Knight </figcaption>
+            </figure>
+        </div>
+        <h4>The logic behind the code</h4>
+        <p> The purpose is to code the identification of all 
+            the knight L-shaped tour possible moves. Some functions 
+            are going to be relooked one by one. The first is the 
+            validation method, checking if the move is within the 
+            boundaries of the board and is not already visited. 
+            The next_move function finds all knight valid moves 
+            from the current position. The knight function was modified 
+            to display the possible moves. The user_click function was 
+            slightly modified to check whether the clicked-on position 
+            is a valid move. After each possible move, the board will 
+            be redrawn with the new position and repeated till there 
+            are no valid moves left for the user to click on. 
+            The total moves will be displayed. 
+
+            We realized that a problem so far is requiring the user to click 
+            on an exact region to move the knight. This may require multiple 
+            clicks because, after all, the program assumes that the user 
+            probably made a mistake in clicking a square. The fundamental 
+            reason behind the incurred problem appears to be the loss of accuracy. 
+            Hence we found clicking exactly at the bottom of the highlighted 
+            circle, only then does the knight move correctly.
+        </p>
+    </section>
+    <section>
+		<h2>How to determine the correct next move of the knight?</h2>
+            <p><ul><li><h4>Graph theory</h4>Graph theory gives us insight 
+                into the knight's movement across a chessboard. Each of the squares 
+                is thought of as the nodes in a graph, and each 
+                legal knight move corresponds to an edge between
+                two nodes. The knight's movement proceeds in "L" shapes: 
+                two squares in one direction and one square in a 
+                direction perpendicular. Because of this, from any 
+                square in the middle of the board, barring the edges 
+                or corners, there could be up to eight different 
+                possible moves, while fewer than eight available 
+                moves are possible from some squares.  </li></p>
+            <p><li><h4>Hamiltonian path</h4>In the glossary of graph theory, such a path is 
+                referred to as a Hamiltonian path. If a knight can 
+                return to its original square after traversing 
+                every square, it will form a Hamiltonian cycle. 
+                This is notoriously difficult, it is impractical 
+                to evaluate even a meaningful subset of paths as 
+                the size of the board grows and the number of paths 
+                increases massively really fast. </li></p>
+            <p><li><h4>Challenges of Hamiltonian cycle</h4>
+                The main difficulty in this case arises from the 
+                rather imbalanced connectivities of those nodes. 
+                Some squares especially those near the center of 
+                the board offer way more move options than those 
+                near the edges. This imbalance makes the consideration 
+                of finding an acceptable path likely to visit every 
+                square interfere with the knight's movement. One of 
+                the common heuristics used to assist the knight in 
+                completing the Hamiltonian path would be Warnsdorff's Rule. </li></p>
+            <p><li><h4>Warnsdorff's Rule</h4>
+                Warnsdorff's Rule relates to the heuristic method for 
+                arriving at the solution more effectively by shortening 
+                the possibilities at any step of the Knight's tour problem. 
+                It works based on a simple and very efficient idea: 
+                the knight goes to the square from which it has the 
+                fewest onward moves. In this way, the knight avoids being 
+                trapped in the parts of the board that do not allow access to most, 
+                if all, of the squares.</li></p>
+            </ul>
+	</section>
+    <section>
+        <h2>Maths Explanation</h2>
+        <p>
+            An $n.n$ chessboard will have $n^2$ squares,
+            this can also be counted to verify. If a knight happens 
+            to start on any square, the next thing to determine is 
+            the number of ways of visiting the remaining $n^2 -1$ squares, 
+            which is given by the permutation formula $P = (n^2 -1)!$. 
+            There would be a total of $8.8=64$ squares on the 
+            standard chessboard, and therefore after starting, 
+            the number of permutations on the remaining $63$ 
+            squares by the knight would equal $P = 63! = 4.33.10^{86}$ 
+            a huge number indeed. Thus this stands impractical for 
+            calculation for larger chessboards. 
+        </p>
+        <p>
+            If a knight is placed on a central square, then it can make up 
+            to 8 moves, on approaching edges, the possibilities start 
+            winding down, and finally corner moves provide you with fewer 
+            options. Therefore counting the allowed moves to be determined 
+            from any square by means of a position $C = \binom{8}{n}$
+            where n is the number of legal moves afforded at the 
+            position of the knight.
+            $C =\binom{8}{8}= 1$, if C is on Central. 
+            $C =\binom{8}{4}= 70$, if C is on edge. 
+        </p>
+    </section>
+    <section>
+        <h2>
+            Future Improvements
+        </h2>
+        <p><ul><li>Upgrading Trinket Python to Python 3 so that when the 
+            user runs the program, it produces the correct output.</li></p>
+        <p><li>Enhancing the precision of the click detection code.</li></p>
+        <p><li>Expanding the variation of board sizes.</li></p>
+    </section>
+    <sub>
+        <h4>References</h4>
+        <p><ul><li><a href="https://www.youtube.com/watch?v=X-e0jk4I938&t=332s" target="_blank">Chess in Python</a></li></p>
+        <p><li><a href="file:///C:/Users/Farhazni/Desktop/Group%20Project%20Individual%20Task.html" target="_blank">Individual Task Group Project</a></li></p>
+        <p><li><a href="https://www.maths-resources.com/knights/" target="_blank">Knight's Tour Challenge</a></li></p>
+        <p><li><a href="https://en.wikipedia.org/wiki/Knight%27s_tour" target="_blank">Knight's Tour Theory</a></li></p>
+        <p><li><a href="https://www.chess.com/terms/knights-tour-chess" target="_blank">Knight's Tour Chess Terms</a></li></p>
+        <p><li><a href="https://www.youtube.com/watch?v=ab_dY3dZFHM" target="_blank">Knight's Tour Numberphile</a></li></p>
+        <p><li><a href="https://soulofmathematics.com/index.php/the-knights-tour/" target="_blank">Knight's Tour Explanation</a></li></p>
+        <p><li><a href="https://www.geeksforgeeks.org/warnsdorffs-algorithm-knights-tour-problem/" target="_blank">Warnsdorff's rule</a></li></p>
+        <p><li><a href="https://sites.science.oregonstate.edu/math_reu/proceedings/REU_Proceedings/Proceedings2004/2004Ganzfried.pdf" target="_blank">Algorithm for Knight's Tour</a></li></p>
+    </ul>
+    </sub>
+        </main>
+    </body>
+</html>
